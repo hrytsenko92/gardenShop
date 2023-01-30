@@ -13,7 +13,9 @@ module.exports = {
         filename: "[name].[contenthash].js",
     },
     resolve: { extensions: [".ts", ".tsx", ".js", "jsx"] },
-    devServer: { port: 4020 },
+    devServer: {
+        historyApiFallback: true,
+    },
     module: {
         rules: [
             {
