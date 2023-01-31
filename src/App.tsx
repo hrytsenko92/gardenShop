@@ -1,11 +1,11 @@
 import React from "react";
 import {
     createBrowserRouter,
-    createRoutesFromElements, NavLink, Outlet,
+    createRoutesFromElements,
     Route,
     RouterProvider,
 } from "react-router-dom";
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import Root from "@app/components/Root";
 import Home from "@app/components/Home";
 import Contacts from "@app/components/Contacts";
@@ -20,15 +20,12 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: yellowgreen;
 }
-
 body {
-  min-height: 100vh;
-  background-color: yellow;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 `
-
 const router = createBrowserRouter(
     createRoutesFromElements( // add to "/" error element
         <Route path="/" element={<Root />}>

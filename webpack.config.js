@@ -44,9 +44,16 @@ module.exports = {
                 test: /\.s[ac]ss$/,
                 use: ["miniCssExtractPlugin.loader", "css-loader", "sass-loader"],
             },
+            // {
+            //     test: /\.(jpe?g|png|gif|mp3|svg)$/,
+            //     use: ["file-loader"],
+            // },
             {
-                test: /\.(jpe?g|png|gif|mp3|svg)$/,
-                use: ["file-loader"],
+                test: /\.(png|jpe?g|gif|jp2|webp)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                },
             },
             {
                 test: /\.svg$/i,
