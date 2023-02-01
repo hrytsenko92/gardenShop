@@ -6,7 +6,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components'
-import Root from "@app/components/Root";
+import Root from "@app/components/root/Root";
 import Home from "@app/components/Home";
 import Contacts from "@app/components/Contacts";
 import Other from "@app/components/Other";
@@ -31,7 +31,6 @@ const router = createBrowserRouter(
         <Route path="/" element={<Root />}>
             <Route index element={<Home />} />
             <Route path="contacts" element={<Contacts />} />
-            <Route path="other" element={<Other />} />
             <Route path="shoppingCart" element={<ShoppingCart />} />
             <Route path="*" element={<NotFound />} />
         </Route>
