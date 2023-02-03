@@ -122,8 +122,8 @@ const Root = () => {
             <Link to="/shoppingCart">Корзина</Link>
           </Nav>
         </Menu>
-        <Title>Бобер і два гусі їхали на бусі в гості до Зюзі</Title>
-        <SubTitle>Купи слона, пазязя</SubTitle>
+        <Title>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, voluptate.</Title>
+        <SubTitle>Lorem ipsum dolor sit amet, consectetur.</SubTitle>
       </Header>
       <Main>
         <Outlet />

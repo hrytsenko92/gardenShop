@@ -11,7 +11,7 @@ const Container = styled.section`
 `;
 const Section = styled.section`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   justify-content: center;
   align-items: center;
@@ -22,8 +22,6 @@ const Home: React.FC = () => {
     <Container>
       <h2>Home</h2>
       <Section>
-        <CardItem />
-        <CardItem />
         <CardItem />
         <CardItem />
         <CardItem />
