@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import info from './info.svg';
 import basket from './basket.svg';
-import arrowUp from './arrowUp.svg';
-import arrowDown from './arrowDown.svg';
-import returnb from './returnb.svg'
+import arrowBack from './arrowBack.svg';
+import minus from './minus.svg';
+import plus from './plus.svg';
+import send from './send.svg';
 
-
-const ArrowUp = styled(arrowUp)``;
-const ArrowDown = styled(arrowDown)``;
 const InfoSVG = styled(info)``;
 const BasketSVG = styled(basket)``;
-const DoneSVG = styled(returnb)``;
-const RemoveSVG = styled(returnb)``;
+const RemoveSVG = styled(arrowBack)``;
+
+
 
 const Container = styled.div``;
 const Top = styled.div``;
@@ -28,24 +27,14 @@ const Right = styled.div``;
 const Done = styled.div``;
 const Details2 = styled.div``;
 const Remove = styled.div``;
-const CountWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-`
-const ItemsCount = styled.input`
-  width: 30px;
-  height: 20px;
-  background-color: yellow;
-`
-const CountUp = styled(ArrowUp)`
-  width: 25px;
-  height: 25px;
-`
-const CountDown = styled(ArrowDown)`
-  width: 25px;
-  height: 25px;
-`
+
+
+const CountWrapper = styled.div``;
+const ItemsCount = styled.input``;
+const PlusItem = styled(plus)``;
+const MinusItem = styled(minus)``;
+const SendSVG = styled(send)``;
+
 
 const Inside = styled.div``;
 const InsideIco = styled.div``;
@@ -140,12 +129,50 @@ const Wrapper = styled.div`
         height: 200%;
         overflow: hidden;
         ${Details2} {
-          padding: 20px;
+          padding: 23px 0px; // ?? 20px def
           float: right;
-          width: calc(70% - 40px);
+          width: calc(70%); // 40px def
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          grid-template-rows: 1fr;
+          justify-content: space-between;
+          align-items: center;
+          ${CountWrapper}{
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            grid-template-rows: 1fr;
+            justify-content: center;
+            align-items: center;
+            ${ItemsCount}{
+              width: 50px;
+              height: 40px;
+              border-radius: 5px;
+              background-color: yellow;
+              grid-column: 2/3;
+              grid-row: 1/2;
+              padding: 7px;
+              font-size: 28px;
+            }
+            ${PlusItem}{
+              width: 25px;
+              height: 25px;
+              grid-column: 3/4;
+              grid-row: 1/2;
+            }
+            ${MinusItem}{
+              width: 25px;
+              height: 25px;
+              grid-column: 1/2;
+              grid-row: 1/2;
+            }
+          }
+          ${SendSVG}{
+            width: 50px;
+            height: 50px;
+          }
         }
         ${Done} {
-          width: calc(30% - 2px);
+          width: calc(25% - 1px);
           float: left;
           transition: transform 0.5s;
           border-right: solid thin rgba(255, 255, 255, 0.3);
@@ -154,13 +181,13 @@ const Wrapper = styled.div`
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
-          ${DoneSVG} {
+          ${RemoveSVG} {
             width: 40px;
             height: 40px;
           }
         }
         ${Remove} {
-          width: calc(30% - 1px);
+          width: calc(25% - 1px);
           clear: both;
           border-right: solid thin rgba(255, 255, 255, 0.3);
           height: 50%;
@@ -240,7 +267,15 @@ const Wrapper = styled.div`
 `;
 const CardItem: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
+
+  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const result = event.target.value.replace(/\D/g, '');
+    // result > 0 &&
+    console.log(result)
+  };
+
+
   const handleClickAdd = () => {
     setIsActive(true);
   };
@@ -263,11 +298,17 @@ const CardItem: React.FC = () => {
           </Left>
           <Right>
             <Done>
-              <DoneSVG />
+              <RemoveSVG />
             </Done>
             <Details2>
-              <H1></H1>
-              <P></P>
+              <CountWrapper>
+                <MinusItem/>
+                <ItemsCount
+                            value={count}
+                            onChange={inputHandler}/>
+                <PlusItem/>
+              </CountWrapper>
+              <SendSVG/>
             </Details2>
             <Remove onClick={handleClickDel}>
               <RemoveSVG />
