@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import info from './info.svg';
-import basket from './basket.svg';
+// import info from './info.svg';
+// import basket from './basket.svg';
 import arrowBack from './arrowBack.svg';
-import minus from './minus.svg';
-import plus from './plus.svg';
-import send from './send.svg';
 
-const InfoSVG = styled(info)``;
-const BasketSVG = styled(basket)``;
-const RemoveSVG = styled(arrowBack)``;
-
-
+// const InfoSVG = styled(info)``;
+// const BasketSVG = styled(basket)``;
+// const RemoveSVG = styled(arrowBack)``;
 
 const Container = styled.div``;
 const Top = styled.div``;
@@ -28,13 +23,9 @@ const Done = styled.div``;
 const Details2 = styled.div``;
 const Remove = styled.div``;
 
-
-const CountWrapper = styled.div``;
+const CountWrapper = styled.form``;
 const ItemsCount = styled.input``;
-const PlusItem = styled(plus)``;
-const MinusItem = styled(minus)``;
-const SendSVG = styled(send)``;
-
+const ItemSubmit = styled.button``;
 
 const Inside = styled.div``;
 const InsideIco = styled.div``;
@@ -106,7 +97,7 @@ const Wrapper = styled.div`
           background: #f1f1f1;
           transition: background 0.5s;
           border-left: solid thin rgba(0, 0, 0, 0.1);
-          ${BasketSVG} {
+          ${'svg'} {
             width: 40px;
             height: 40px;
             color: #254053;
@@ -115,7 +106,7 @@ const Wrapper = styled.div`
           &:hover {
             background: #a6cdde;
           }
-          &:hover ${BasketSVG} {
+          &:hover ${'svg'} {
             transform: translateY(5px);
             color: #00394b;
           }
@@ -129,46 +120,40 @@ const Wrapper = styled.div`
         height: 200%;
         overflow: hidden;
         ${Details2} {
-          padding: 23px 0px; // ?? 20px def
+          padding: 23px 0px;
           float: right;
-          width: calc(70%); // 40px def
-          display: grid;
-          grid-template-columns: 2fr 1fr;
-          grid-template-rows: 1fr;
-          justify-content: space-between;
-          align-items: center;
-          ${CountWrapper}{
+          width: calc(75%);
+          ${CountWrapper} {
+            width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1.5fr 1fr;
+            grid-template-columns: 2fr 1fr;
             grid-template-rows: 1fr;
             justify-content: center;
+            justify-items: center;
             align-items: center;
-            ${ItemsCount}{
-              width: 50px;
-              height: 40px;
+            ${ItemsCount} {
+              width: 70px;
+              height: 50px;
               border-radius: 5px;
-              background-color: yellow;
-              grid-column: 2/3;
+              grid-column: 1/2;
               grid-row: 1/2;
               padding: 7px;
               font-size: 28px;
+              border: none;
             }
-            ${PlusItem}{
-              width: 25px;
-              height: 25px;
-              grid-column: 3/4;
+            ${ItemSubmit} {
+              grid-column: 2/3;
               grid-row: 1/2;
+              justify-self: start;
+              width: 50px;
+              height: 50px;
+              background-color: transparent;
+              border: none;
+              ${'svg'} {
+                width: 50px;
+                height: 50px;
+              }
             }
-            ${MinusItem}{
-              width: 25px;
-              height: 25px;
-              grid-column: 1/2;
-              grid-row: 1/2;
-            }
-          }
-          ${SendSVG}{
-            width: 50px;
-            height: 50px;
           }
         }
         ${Done} {
@@ -181,7 +166,7 @@ const Wrapper = styled.div`
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
-          ${RemoveSVG} {
+          ${'svg'} {
             width: 40px;
             height: 40px;
           }
@@ -197,7 +182,7 @@ const Wrapper = styled.div`
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
-          ${RemoveSVG} {
+          ${'svg'} {
             transition: transform 0.5s;
             width: 40px;
             height: 40px;
@@ -206,7 +191,7 @@ const Wrapper = styled.div`
           &:hover {
             background: #9b2847;
           }
-          &:hover ${RemoveSVG} {
+          &:hover ${'svg'} {
             transform: translateY(5px);
           }
         }
@@ -230,7 +215,7 @@ const Wrapper = styled.div`
     border-radius: 0px 0px 200px 200px;
     transition: all 0.5s, border-radius 2s, top 1s;
     overflow: hidden;
-    ${InfoSVG} {
+    ${'svg'} {
       position: absolute;
       right: 85px;
       top: 85px;
@@ -245,7 +230,7 @@ const Wrapper = styled.div`
       top: 0;
       border-radius: 0;
       height: 80%;
-      ${InfoSVG} {
+      ${'svg'} {
         opacity: 0;
         right: 15px;
         top: 15px;
@@ -265,16 +250,25 @@ const Wrapper = styled.div`
     }
   }
 `;
+
 const CardItem: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number | string>(5);
+  const [countDefault, setCountDefault] = useState<boolean>(true);
+
+  const countReset = () => (countDefault ? setCount('') : countDefault);
 
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
     const result = event.target.value.replace(/\D/g, '');
-    // result > 0 &&
-    console.log(result)
+    Number(result) >= 1 && Number(result) <= 999 ? setCount(Number(result)) : setCount('');
   };
-
+  const onSubmitEvent = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setCount(5);
+    setCountDefault(true);
+    setIsActive(false);
+  };
 
   const handleClickAdd = () => {
     setIsActive(true);
@@ -293,32 +287,76 @@ const CardItem: React.FC = () => {
               <P>250грн</P>
             </Details1>
             <Buy onClick={handleClickAdd}>
-              <BasketSVG />
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M1 1C0.447715 1 0 1.44772 0 2C0 2.55228 0.447715 3 1 3H3.20647L5.98522 14.9089C6.39883 16.6816 7.95486 17.9464 9.76471 17.9983V18H17.5874C19.5362 18 21.2014 16.5956 21.5301 14.6747L22.7857 7.33734C22.9947 6.11571 22.0537 5 20.8143 5H5.72686L4.97384 1.77277C4.86824 1.32018 4.46475 1 4 1H1ZM6.19353 7L7.9329 14.4545C8.14411 15.3596 8.95109 16 9.88058 16H17.5874C18.5618 16 19.3944 15.2978 19.5588 14.3373L20.8143 7H6.19353Z"
+                  fill="#000000"
+                />
+                <path
+                  d="M8 23C9.10457 23 10 22.1046 10 21C10 19.8954 9.10457 19 8 19C6.89543 19 6 19.8954 6 21C6 22.1046 6.89543 23 8 23Z"
+                  fill="#000000"
+                />
+                <path
+                  d="M19 23C20.1046 23 21 22.1046 21 21C21 19.8954 20.1046 19 19 19C17.8954 19 17 19.8954 17 21C17 22.1046 17.8954 23 19 23Z"
+                  fill="#000000"
+                />
+              </svg>
             </Buy>
           </Left>
           <Right>
             <Done>
-              <RemoveSVG />
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21 4C21 3.44772 20.5523 3 20 3C19.4477 3 19 3.44772 19 4V11C19 11.7956 18.6839 12.5587 18.1213 13.1213C17.5587 13.6839 16.7956 14 16 14H6.41421L9.70711 10.7071C10.0976 10.3166 10.0976 9.68342 9.70711 9.29289C9.31658 8.90237 8.68342 8.90237 8.29289 9.29289L3.29289 14.2929C2.90237 14.6834 2.90237 15.3166 3.29289 15.7071L8.29289 20.7071C8.68342 21.0976 9.31658 21.0976 9.70711 20.7071C10.0976 20.3166 10.0976 19.6834 9.70711 19.2929L6.41421 16H16C17.3261 16 18.5979 15.4732 19.5355 14.5355C20.4732 13.5979 21 12.3261 21 11V4Z"
+                  fill="#000000"
+                />
+              </svg>
             </Done>
             <Details2>
-              <CountWrapper>
-                <MinusItem/>
+              <CountWrapper onSubmit={onSubmitEvent}>
                 <ItemsCount
-                            value={count}
-                            onChange={inputHandler}/>
-                <PlusItem/>
+                  value={count}
+                  onFocus={countReset}
+                  onChange={inputHandler}
+                  type="text"
+                />
+                <ItemSubmit type="submit">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 14L9 17L18 6" stroke="#33363F" strokeWidth="2" />
+                  </svg>
+                </ItemSubmit>
               </CountWrapper>
-              <SendSVG/>
             </Details2>
             <Remove onClick={handleClickDel}>
-              <RemoveSVG />
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M21 4C21 3.44772 20.5523 3 20 3C19.4477 3 19 3.44772 19 4V11C19 11.7956 18.6839 12.5587 18.1213 13.1213C17.5587 13.6839 16.7956 14 16 14H6.41421L9.70711 10.7071C10.0976 10.3166 10.0976 9.68342 9.70711 9.29289C9.31658 8.90237 8.68342 8.90237 8.29289 9.29289L3.29289 14.2929C2.90237 14.6834 2.90237 15.3166 3.29289 15.7071L8.29289 20.7071C8.68342 21.0976 9.31658 21.0976 9.70711 20.7071C10.0976 20.3166 10.0976 19.6834 9.70711 19.2929L6.41421 16H16C17.3261 16 18.5979 15.4732 19.5355 14.5355C20.4732 13.5979 21 12.3261 21 11V4Z"
+                  fill="#000000"
+                />
+              </svg>
             </Remove>
           </Right>
         </Bottom>
       </Container>
       <Inside>
         <InsideIco>
-          <InfoSVG />
+          <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g id="icomoon-ignore"></g>
+            <path
+              d="M16.067 11.156c0.883 0 1.599-0.716 1.599-1.599 0-0.884-0.716-1.598-1.599-1.598s-1.599 0.714-1.599 1.598c0 0.883 0.716 1.599 1.599 1.599z"
+              fill="#000000"
+            ></path>
+            <path
+              d="M17.153 13.289v-1.066h-3.199v1.066h1.066v9.063h-1.066v1.066h4.265v-1.066h-1.066z"
+              fill="#000000"
+            ></path>
+            <path
+              d="M16 2.672c-7.361 0-13.328 5.968-13.328 13.328 0 7.362 5.968 13.328 13.328 13.328s13.328-5.966 13.328-13.328c0-7.361-5.968-13.328-13.328-13.328zM16 28.262c-6.761 0-12.262-5.501-12.262-12.262s5.5-12.262 12.262-12.262c6.761 0 12.262 5.501 12.262 12.262s-5.5 12.262-12.262 12.262z"
+              fill="#000000"
+            ></path>
+          </svg>
         </InsideIco>
         <Contents>
           <ItemDetail>

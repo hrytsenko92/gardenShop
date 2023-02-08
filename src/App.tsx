@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import Root from '@app/components/root/Root';
-import Home from '@app/components/Home';
-import Contacts from '@app/components/Contacts';
+import Home from '@app/components/home/Home';
+import Contacts from '@app/components/contacts/Contacts';
 import ShoppingCart from '@app/components/ShoppingСart';
 import NotFound from '@app/components/root/NotFound';
 
@@ -28,7 +28,6 @@ body {
 `;
 const router = createBrowserRouter(
   createRoutesFromElements(
-    // add to "/" error element
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path="contacts" element={<Contacts />} />
