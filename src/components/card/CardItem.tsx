@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import info from './info.svg';
-// import basket from './basket.svg';
-import arrowBack from './arrowBack.svg';
 
-// const InfoSVG = styled(info)``;
-// const BasketSVG = styled(basket)``;
-// const RemoveSVG = styled(arrowBack)``;
+const darkGreen = '#285A43';
+const lightGreen = '#638e7b';
+const cardBGlight = '#94b9a9';
+const baseWhite = '#ffffff';
+const cardBG = '#f1f1f1';
 
 const Container = styled.div``;
 const Top = styled.div``;
@@ -19,7 +18,6 @@ const P = styled.p``;
 const Buy = styled.div``;
 
 const Right = styled.div``;
-const Done = styled.div``;
 const Details2 = styled.div``;
 const Remove = styled.div``;
 
@@ -35,7 +33,7 @@ const ItemDetail = styled.div``;
 const Wrapper = styled.div`
   width: 300px;
   height: 500px;
-  background: white;
+  background: ${baseWhite};
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -78,7 +76,7 @@ const Wrapper = styled.div`
       ${Left} {
         height: 100%;
         width: 50%;
-        background: #f4f4f4;
+        background: ${cardBG};
         position: relative;
         float: left;
         ${Details1} {
@@ -94,35 +92,36 @@ const Wrapper = styled.div`
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
-          background: #f1f1f1;
+          background: ${cardBG};
           transition: background 0.5s;
           border-left: solid thin rgba(0, 0, 0, 0.1);
           ${'svg'} {
             width: 40px;
             height: 40px;
-            color: #254053;
+            color: ${darkGreen};
             transition: transform 0.5s;
           }
           &:hover {
-            background: #a6cdde;
+            background: ${cardBGlight};
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
-            color: #00394b;
+            color: ${darkGreen};
           }
         }
       }
       ${Right} {
         width: 50%;
-        background: #a6cdde;
-        color: white;
+        background: ${cardBGlight};
+        color: ${baseWhite};
         float: right;
-        height: 200%;
+        height: 100%;
         overflow: hidden;
         ${Details2} {
           padding: 23px 0px;
           float: right;
           width: calc(75%);
+          height: 100%;
           ${CountWrapper} {
             width: 100%;
             display: grid;
@@ -140,6 +139,7 @@ const Wrapper = styled.div`
               padding: 7px;
               font-size: 28px;
               border: none;
+              text-align: center;
             }
             ${ItemSubmit} {
               grid-column: 2/3;
@@ -150,33 +150,24 @@ const Wrapper = styled.div`
               background-color: transparent;
               border: none;
               ${'svg'} {
+                transition: transform 0.5s;
                 width: 50px;
                 height: 50px;
+                color: ${darkGreen};
+                &:hover {
+                  transition: transform 0.5s;
+                  transform: translateY(5px);
+                }
               }
             }
           }
         }
-        ${Done} {
-          width: calc(25% - 1px);
-          float: left;
-          transition: transform 0.5s;
-          border-right: solid thin rgba(255, 255, 255, 0.3);
-          height: 50%;
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: center;
-          align-items: center;
-          ${'svg'} {
-            width: 40px;
-            height: 40px;
-          }
-        }
         ${Remove} {
-          width: calc(25% - 1px);
-          clear: both;
+          width: calc(25%);
+          float: left;
           border-right: solid thin rgba(255, 255, 255, 0.3);
-          height: 50%;
-          background: #bc3b59;
+          height: 100%;
+          background: #94b9a9;
           transition: transform 0.5s, background 0.5s;
           display: flex;
           flex-flow: row nowrap;
@@ -186,19 +177,13 @@ const Wrapper = styled.div`
             transition: transform 0.5s;
             width: 40px;
             height: 40px;
-            color: white;
+            color: ${lightGreen};
           }
           &:hover {
-            background: #9b2847;
+            /* background: ${darkGreen}; // ??? */
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
-          }
-        }
-        &:hover {
-          ${Remove},
-          ${Done} {
-            transform: translateY(-100%);
           }
         }
       }
@@ -206,7 +191,7 @@ const Wrapper = styled.div`
   }
   ${Inside} {
     z-index: 9;
-    background: #92879b;
+    background: ${cardBGlight};
     width: 140px;
     height: 140px;
     position: absolute;
@@ -219,7 +204,7 @@ const Wrapper = styled.div`
       position: absolute;
       right: 85px;
       top: 85px;
-      color: white;
+      color: ${darkGreen};
       opacity: 1;
       width: 30px;
       height: 30px;
@@ -287,33 +272,33 @@ const CardItem: React.FC = () => {
               <P>250грн</P>
             </Details1>
             <Buy onClick={handleClickAdd}>
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 24 24" fill="#285A43" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M1 1C0.447715 1 0 1.44772 0 2C0 2.55228 0.447715 3 1 3H3.20647L5.98522 14.9089C6.39883 16.6816 7.95486 17.9464 9.76471 17.9983V18H17.5874C19.5362 18 21.2014 16.5956 21.5301 14.6747L22.7857 7.33734C22.9947 6.11571 22.0537 5 20.8143 5H5.72686L4.97384 1.77277C4.86824 1.32018 4.46475 1 4 1H1ZM6.19353 7L7.9329 14.4545C8.14411 15.3596 8.95109 16 9.88058 16H17.5874C18.5618 16 19.3944 15.2978 19.5588 14.3373L20.8143 7H6.19353Z"
-                  fill="#000000"
+                  fill="#285A43"
                 />
                 <path
                   d="M8 23C9.10457 23 10 22.1046 10 21C10 19.8954 9.10457 19 8 19C6.89543 19 6 19.8954 6 21C6 22.1046 6.89543 23 8 23Z"
-                  fill="#000000"
+                  fill="#285A43"
                 />
                 <path
                   d="M19 23C20.1046 23 21 22.1046 21 21C21 19.8954 20.1046 19 19 19C17.8954 19 17 19.8954 17 21C17 22.1046 17.8954 23 19 23Z"
-                  fill="#000000"
+                  fill="#285A43"
                 />
               </svg>
             </Buy>
           </Left>
           <Right>
-            <Done>
+            <Remove onClick={handleClickDel}>
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M21 4C21 3.44772 20.5523 3 20 3C19.4477 3 19 3.44772 19 4V11C19 11.7956 18.6839 12.5587 18.1213 13.1213C17.5587 13.6839 16.7956 14 16 14H6.41421L9.70711 10.7071C10.0976 10.3166 10.0976 9.68342 9.70711 9.29289C9.31658 8.90237 8.68342 8.90237 8.29289 9.29289L3.29289 14.2929C2.90237 14.6834 2.90237 15.3166 3.29289 15.7071L8.29289 20.7071C8.68342 21.0976 9.31658 21.0976 9.70711 20.7071C10.0976 20.3166 10.0976 19.6834 9.70711 19.2929L6.41421 16H16C17.3261 16 18.5979 15.4732 19.5355 14.5355C20.4732 13.5979 21 12.3261 21 11V4Z"
-                  fill="#000000"
+                  fill="#285A43"
                 />
               </svg>
-            </Done>
+            </Remove>
             <Details2>
               <CountWrapper onSubmit={onSubmitEvent}>
                 <ItemsCount
@@ -324,19 +309,11 @@ const CardItem: React.FC = () => {
                 />
                 <ItemSubmit type="submit">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 14L9 17L18 6" stroke="#33363F" strokeWidth="2" />
+                    <path d="M5 14L9 17L18 6" stroke="#285A43" strokeWidth="2" />
                   </svg>
                 </ItemSubmit>
               </CountWrapper>
             </Details2>
-            <Remove onClick={handleClickDel}>
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M21 4C21 3.44772 20.5523 3 20 3C19.4477 3 19 3.44772 19 4V11C19 11.7956 18.6839 12.5587 18.1213 13.1213C17.5587 13.6839 16.7956 14 16 14H6.41421L9.70711 10.7071C10.0976 10.3166 10.0976 9.68342 9.70711 9.29289C9.31658 8.90237 8.68342 8.90237 8.29289 9.29289L3.29289 14.2929C2.90237 14.6834 2.90237 15.3166 3.29289 15.7071L8.29289 20.7071C8.68342 21.0976 9.31658 21.0976 9.70711 20.7071C10.0976 20.3166 10.0976 19.6834 9.70711 19.2929L6.41421 16H16C17.3261 16 18.5979 15.4732 19.5355 14.5355C20.4732 13.5979 21 12.3261 21 11V4Z"
-                  fill="#000000"
-                />
-              </svg>
-            </Remove>
           </Right>
         </Bottom>
       </Container>
@@ -346,15 +323,15 @@ const CardItem: React.FC = () => {
             <g id="icomoon-ignore"></g>
             <path
               d="M16.067 11.156c0.883 0 1.599-0.716 1.599-1.599 0-0.884-0.716-1.598-1.599-1.598s-1.599 0.714-1.599 1.598c0 0.883 0.716 1.599 1.599 1.599z"
-              fill="#000000"
+              fill="#285A43"
             ></path>
             <path
               d="M17.153 13.289v-1.066h-3.199v1.066h1.066v9.063h-1.066v1.066h4.265v-1.066h-1.066z"
-              fill="#000000"
+              fill="#285A43"
             ></path>
             <path
               d="M16 2.672c-7.361 0-13.328 5.968-13.328 13.328 0 7.362 5.968 13.328 13.328 13.328s13.328-5.966 13.328-13.328c0-7.361-5.968-13.328-13.328-13.328zM16 28.262c-6.761 0-12.262-5.501-12.262-12.262s5.5-12.262 12.262-12.262c6.761 0 12.262 5.501 12.262 12.262s-5.5 12.262-12.262 12.262z"
-              fill="#000000"
+              fill="#285A43"
             ></path>
           </svg>
         </InsideIco>

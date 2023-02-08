@@ -46,11 +46,11 @@ const ButtonWrapper = styled.div`
   }
 `;
 const ButtonSelect = styled.button`
-  width: 120px;
+  width: 150px;
   height: 40px;
   border-radius: 3px;
+  border: 1.5px solid rgba(40, 90, 67, 1);
   background-color: transparent;
-  border: 1px solid blue;
   font-size: 15px;
   cursor: pointer;
 `;

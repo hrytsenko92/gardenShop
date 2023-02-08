@@ -81,9 +81,23 @@ const Nav = styled('nav')`
   justify-content: space-around;
 `;
 const Link = styled(NavLink)`
+  width: 150px;
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid white; */
   text-decoration: none;
+  color: white;
   &:hover,
-  &:focus {
+  &.active {
+    /* border-radius: 10px 0px 0px 10px; */
+  }
+  &.active {
+    color: rgba(40, 90, 67, 1);
+    border: 1.5px solid rgba(40, 90, 67, 1);
+    border-radius: 3px;
     text-decoration: underline;
   }
 `;
@@ -127,15 +141,9 @@ const Root = () => {
           <Logo />
         </Logotype>
         <Nav>
-          <Link style={scrollStyle.color} to="/">
-            Головна
-          </Link>
-          <Link style={scrollStyle.color} to="/contacts">
-            Контакти
-          </Link>
-          <Link style={scrollStyle.color} to="/shoppingCart">
-            Корзина
-          </Link>
+          <Link to="/">Головна</Link>
+          <Link to="/contacts">Контакти</Link>
+          <Link to="/shoppingCart">Корзина</Link>
         </Nav>
       </Menu>
       <Header>
@@ -152,3 +160,8 @@ const Root = () => {
   );
 };
 export default Root;
+// ${'NavLink'}&:hover,
+// ${'NavLink'}&:focus {
+//   text-decoration: underline;
+//   /* color: '#285A43'; */
+// }
