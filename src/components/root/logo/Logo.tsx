@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import gardenLogo from './gardenLogo.svg';
+import { colors } from '../../../../assets/colors';
 
 const Container = styled.div`
   display: grid;
@@ -11,7 +12,7 @@ const Container = styled.div`
   gap: 10px;
   width: 100%;
   height: 100%;
-  color: white;
+  color: ${colors.textGreen};
 `;
 const LogoSvgWrapper = styled.div`
   display: flex;

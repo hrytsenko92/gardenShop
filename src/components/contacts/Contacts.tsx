@@ -1,11 +1,12 @@
 import React from 'react';
 import ContactsMap from './ContactsMap';
 import styled from 'styled-components';
+import { colors } from '../../../assets/colors';
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr 2.3fr;
 `;
 const ContactsWrapper = styled.div`
   grid-column: 1/2;
@@ -17,10 +18,14 @@ const ContactsWrapper = styled.div`
   margin: 25px 0px;
 `;
 const ContactContainer = styled.div`
+  width: 85%;
+  padding: 15px;
+  border-radius: 7px;
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
-  gap: 7px;
+  gap: 15px;
+  background-color: ${colors.cardBG};
 `;
 const ContactTitle = styled.h2``;
 const ContactName = styled.h3``;
@@ -40,12 +45,14 @@ const MapWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   box-shadow: 10px;
 `;
 const MapContainer = styled.div`
-  width: 80%;
+  width: 85%;
   height: 400px;
+  border-radius: 7px;
+  overflow: hidden;
 `;
 
 const Contacts: React.FC = () => {

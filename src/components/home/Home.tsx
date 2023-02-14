@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardItem from '@app/components/card/CardItem';
 import { device, DeviceType } from '../../../assets/device';
+import { colors } from '../../../assets/colors';
 
 const Container = styled.section`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  /* background-color: #f5f5f5; */
   /* gap: 25px; */
 `;
 const Section = styled.section`
@@ -42,6 +44,9 @@ const ButtonWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
   }
   @media screen and ${device.tabletS} {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @media screen and ${device.tabletM} {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 `;
@@ -50,6 +55,7 @@ const ButtonSelect = styled.button`
   height: 40px;
   border-radius: 3px;
   border: 1.5px solid rgba(40, 90, 67, 1);
+  color: ${colors.textGreen};
   background-color: transparent;
   font-size: 15px;
   cursor: pointer;
@@ -111,16 +117,50 @@ const Home: React.FC = () => {
       setDecorativeBushes(false),
       setComifers(true);
   };
+  const buttonStyle = {
+    backgroundColor: `${colors.lightGreen}`,
+    border: 'none',
+  };
 
   return (
     <Container>
       <ButtonWrapper>
-        <ButtonSelect onClick={selectAll}>Всі види</ButtonSelect>
-        <ButtonSelect onClick={selectRoses}>Троянди</ButtonSelect>
-        <ButtonSelect onClick={selectApple}>Ягідні культури</ButtonSelect>
-        <ButtonSelect onClick={selectFruitful}>Плодові дерева</ButtonSelect>
-        <ButtonSelect onClick={selectDecorativeBushes}>Декоративні кущі</ButtonSelect>
-        <ButtonSelect onClick={selectComifers}>Хвойні рослини</ButtonSelect>
+        <ButtonSelect
+          style={all ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectAll}
+        >
+          Всі види
+        </ButtonSelect>
+        <ButtonSelect
+          style={roses ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectRoses}
+        >
+          Троянди
+        </ButtonSelect>
+        <ButtonSelect
+          style={apple ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectApple}
+        >
+          Ягідні культури
+        </ButtonSelect>
+        <ButtonSelect
+          style={fruitful ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectFruitful}
+        >
+          Плодові дерева
+        </ButtonSelect>
+        <ButtonSelect
+          style={decorativeBushes ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectDecorativeBushes}
+        >
+          Декоративні кущі
+        </ButtonSelect>
+        <ButtonSelect
+          style={conifers ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectComifers}
+        >
+          Хвойні рослини
+        </ButtonSelect>
       </ButtonWrapper>
       <Section>
         {roses ? <CardItem /> : null}
@@ -128,9 +168,6 @@ const Home: React.FC = () => {
         {fruitful ? <CardItem /> : null}
         {decorativeBushes ? <CardItem /> : null}
         {conifers ? <CardItem /> : null}
-        {/* <CardItem />
-        <CardItem />
-        <CardItem /> */}
       </Section>
     </Container>
   );

@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { add, itemType } from '../../../store/orderSlice';
 import styled from 'styled-components';
-
-const darkGreen = '#285A43';
-const lightGreen = '#638e7b';
-const cardBGlight = '#94b9a9';
-const baseWhite = '#ffffff';
-const cardBG = '#f1f1f1';
+import { colors } from '../../../assets/colors';
 
 const Container = styled.div``;
 const Top = styled.div``;
@@ -33,7 +30,7 @@ const ItemDetail = styled.div``;
 const Wrapper = styled.div`
   width: 300px;
   height: 500px;
-  background: ${baseWhite};
+  background: ${colors.baseWhite};
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -41,6 +38,7 @@ const Wrapper = styled.div`
   box-shadow: none;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
+  color: ${colors.textGreen};
   &:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
@@ -76,7 +74,7 @@ const Wrapper = styled.div`
       ${Left} {
         height: 100%;
         width: 50%;
-        background: ${cardBG};
+        background: ${colors.cardBG};
         position: relative;
         float: left;
         ${Details1} {
@@ -86,34 +84,34 @@ const Wrapper = styled.div`
         }
         ${Buy} {
           float: right;
-          width: calc(30% - 2px);
+          width: calc(30%);
           height: 100%;
           display: flex;
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
-          background: ${cardBG};
+          background: ${colors.cardBG};
           transition: background 0.5s;
           border-left: solid thin rgba(0, 0, 0, 0.1);
           ${'svg'} {
             width: 40px;
             height: 40px;
-            color: ${darkGreen};
+            color: ${colors.darkGreen};
             transition: transform 0.5s;
           }
           &:hover {
-            background: ${cardBGlight};
+            background: ${colors.cardBGlight};
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
-            color: ${darkGreen};
+            color: ${colors.darkGreen};
           }
         }
       }
       ${Right} {
         width: 50%;
-        background: ${cardBGlight};
-        color: ${baseWhite};
+        background: ${colors.cardBGlight};
+        color: ${colors.baseWhite};
         float: right;
         height: 100%;
         overflow: hidden;
@@ -153,7 +151,7 @@ const Wrapper = styled.div`
                 transition: transform 0.5s;
                 width: 50px;
                 height: 50px;
-                color: ${darkGreen};
+                color: ${colors.darkGreen};
                 &:hover {
                   transition: transform 0.5s;
                   transform: translateY(5px);
@@ -177,10 +175,10 @@ const Wrapper = styled.div`
             transition: transform 0.5s;
             width: 40px;
             height: 40px;
-            color: ${lightGreen};
+            color: ${colors.lightGreen};
           }
           &:hover {
-            /* background: ${darkGreen}; // ??? */
+            /* background: ${colors.darkGreen}; // ??? */
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
@@ -191,7 +189,7 @@ const Wrapper = styled.div`
   }
   ${Inside} {
     z-index: 9;
-    background: ${cardBGlight};
+    background: ${colors.cardBGlight};
     width: 140px;
     height: 140px;
     position: absolute;
@@ -204,7 +202,7 @@ const Wrapper = styled.div`
       position: absolute;
       right: 85px;
       top: 85px;
-      color: ${darkGreen};
+      color: ${colors.darkGreen};
       opacity: 1;
       width: 30px;
       height: 30px;
@@ -241,6 +239,8 @@ const CardItem: React.FC = () => {
   const [count, setCount] = useState<number | string>(5);
   const [countDefault, setCountDefault] = useState<boolean>(true);
 
+  const dispatch = useDispatch();
+
   const countReset = () => (countDefault ? setCount('') : countDefault);
 
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -250,6 +250,14 @@ const CardItem: React.FC = () => {
   };
   const onSubmitEvent = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    dispatch(
+      add({
+        itemId: Number(new Date()),
+        itemTotal: Number(count),
+        itemName: 'слива',
+        itemPrice: 111,
+      }),
+    );
     setCount(5);
     setCountDefault(true);
     setIsActive(false);

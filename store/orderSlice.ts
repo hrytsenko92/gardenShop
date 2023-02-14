@@ -1,17 +1,29 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-export type listState = {
-    value: number[];
-}
-const initialState: listState = {
-    value: [],
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+export type itemType = {
+  itemId: number;
+  itemName: string;
+  itemPrice: number;
+  itemTotal: number;
 };
+export type stateType = {
+  value: itemType[];
+};
+const initialState: stateType = {
+  value: [],
+};
+
 export const orderSlice = createSlice({
-    name: "orderList",
-    initialState,
-    reducers: {
-        add: (state, action: PayloadAction<number>) => {state.value.push(action.payload)},
-        remove: (state, action: PayloadAction<number>) => {state.value = state.value.filter((item)=>item !== action.payload), console.log(state)}
+  name: 'orderList',
+  initialState,
+  reducers: {
+    add: (state, action: PayloadAction<itemType>) => {
+      state.value.push(action.payload);
     },
-})
-export const { add, remove } = orderSlice.actions
-export default orderSlice.reducer
+    remove: (state, action: PayloadAction<itemType>) => {
+      state.value = state.value.filter((item) => item.itemId !== action.payload.itemId);
+    },
+  },
+});
+export const { add, remove } = orderSlice.actions;
+export default orderSlice.reducer;
