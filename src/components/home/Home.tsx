@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardItem from '@app/components/card/CardItem';
+import { allData } from '../../../data/seedlings/allData';
 import { device, DeviceType } from '../../../assets/device';
 import { colors } from '../../../assets/colors';
 
@@ -9,8 +10,6 @@ const Container = styled.section`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  /* background-color: #f5f5f5; */
-  /* gap: 25px; */
 `;
 const Section = styled.section`
   display: grid;
@@ -64,15 +63,16 @@ const ButtonSelect = styled.button`
 const Home: React.FC = () => {
   const [all, setAll] = useState(true);
   const [roses, setRoses] = useState(true);
-  const [apple, setApple] = useState(true);
+  const [berries, setBerries] = useState(true);
   const [fruitful, setFruitful] = useState(true);
   const [decorativeBushes, setDecorativeBushes] = useState(true);
   const [conifers, setComifers] = useState(true);
 
+  console.log(allData);
   const selectAll = () => {
     setAll(true),
       setRoses(true),
-      setApple(true),
+      setBerries(true),
       setFruitful(true),
       setDecorativeBushes(true),
       setComifers(true);
@@ -80,15 +80,15 @@ const Home: React.FC = () => {
   const selectRoses = () => {
     setAll(false),
       setRoses(true),
-      setApple(false),
+      setBerries(false),
       setFruitful(false),
       setDecorativeBushes(false),
       setComifers(false);
   };
-  const selectApple = () => {
+  const selectBerries = () => {
     setAll(false),
       setRoses(false),
-      setApple(true),
+      setBerries(true),
       setFruitful(false),
       setDecorativeBushes(false),
       setComifers(false);
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
   const selectFruitful = () => {
     setAll(false),
       setRoses(false),
-      setApple(false),
+      setBerries(false),
       setFruitful(true),
       setDecorativeBushes(false),
       setComifers(false);
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
   const selectDecorativeBushes = () => {
     setAll(false),
       setRoses(false),
-      setApple(false),
+      setBerries(false),
       setFruitful(false),
       setDecorativeBushes(true),
       setComifers(false);
@@ -112,7 +112,7 @@ const Home: React.FC = () => {
   const selectComifers = () => {
     setAll(false),
       setRoses(false),
-      setApple(false),
+      setBerries(false),
       setFruitful(false),
       setDecorativeBushes(false),
       setComifers(true);
@@ -138,8 +138,8 @@ const Home: React.FC = () => {
           Троянди
         </ButtonSelect>
         <ButtonSelect
-          style={apple ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectApple}
+          style={berries ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={selectBerries}
         >
           Ягідні культури
         </ButtonSelect>
@@ -164,7 +164,7 @@ const Home: React.FC = () => {
       </ButtonWrapper>
       <Section>
         {roses ? <CardItem /> : null}
-        {apple ? <CardItem /> : null}
+        {berries ? <CardItem /> : null}
         {fruitful ? <CardItem /> : null}
         {decorativeBushes ? <CardItem /> : null}
         {conifers ? <CardItem /> : null}
