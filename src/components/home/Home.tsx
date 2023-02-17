@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardItem from '@app/components/card/CardItem';
 import { allData } from '../../../data/seedlings/allData';
-import { device, DeviceType } from '../../../assets/device';
+import { device } from '../../../assets/device';
 import { colors } from '../../../assets/colors';
 
 const Container = styled.section`

@@ -177,9 +177,6 @@ const Wrapper = styled.div`
             height: 40px;
             color: ${colors.lightGreen};
           }
-          &:hover {
-            /* background: ${colors.darkGreen}; // ??? */
-          }
           &:hover ${'svg'} {
             transform: translateY(5px);
           }
