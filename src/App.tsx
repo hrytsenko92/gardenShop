@@ -11,7 +11,6 @@ import Home from '@app/components/home/Home';
 import Contacts from '@app/components/contacts/Contacts';
 import ShoppingCart from '@app/components/shoppingCard/ShoppingСart';
 import NotFound from '@app/components/root/NotFound';
-import Order from './components/shoppingCard/Order';
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -33,7 +32,6 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="contacts" element={<Contacts />} />
       <Route path="shoppingCart" element={<ShoppingCart />} />
-      <Route path="order" element={<Order />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
   ),
