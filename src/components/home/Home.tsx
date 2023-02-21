@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardItem from '@app/components/card/CardItem';
-import { allData } from '../../../data/seedlings/allData';
+import { allData } from '../../../data/allData';
 import { device } from '../../../assets/device';
-import { colors } from '../../../assets/colors';
+import { colorsPalette } from '../../../assets/colors';
 
 const Container = styled.section`
   display: flex;
@@ -53,8 +53,8 @@ const ButtonSelect = styled.button`
   width: 150px;
   height: 40px;
   border-radius: 3px;
-  border: 1.5px solid rgba(40, 90, 67, 1);
-  color: ${colors.textGreen};
+  border: 1.5px solid ${colorsPalette.color1};
+  color: ${colorsPalette.color1};
   background-color: transparent;
   font-size: 15px;
   cursor: pointer;
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
       setComifers(true);
   };
   const buttonStyle = {
-    backgroundColor: `${colors.lightGreen}`,
+    backgroundColor: `${colorsPalette.color3}`,
     border: 'none',
   };
 

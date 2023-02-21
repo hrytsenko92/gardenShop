@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { add, itemType } from '../../../store/orderSlice';
 import styled from 'styled-components';
-import { colors } from '../../../assets/colors';
+import { colors, colorsPalette } from '../../../assets/colors';
 
 const Container = styled.div``;
 const Top = styled.div``;
@@ -30,7 +30,7 @@ const ItemDetail = styled.div``;
 const Wrapper = styled.div`
   width: 300px;
   height: 500px;
-  background: ${colors.baseWhite};
+  background: ${colorsPalette.baseWhite};
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   box-shadow: none;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
-  color: ${colors.textGreen};
+  color: ${colorsPalette.color1};
   &:hover {
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
@@ -74,13 +74,18 @@ const Wrapper = styled.div`
       ${Left} {
         height: 100%;
         width: 50%;
-        background: ${colors.cardBG};
+        background: ${colorsPalette.cardBG};
         position: relative;
         float: left;
         ${Details1} {
-          padding: 20px;
           float: left;
-          width: calc(70% - 40px);
+          width: calc(70%);
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          height: 100%;
         }
         ${Buy} {
           float: right;
@@ -90,28 +95,28 @@ const Wrapper = styled.div`
           flex-flow: row nowrap;
           justify-content: center;
           align-items: center;
-          background: ${colors.cardBG};
+          background: ${colorsPalette.cardBG};
           transition: background 0.5s;
           border-left: solid thin rgba(0, 0, 0, 0.1);
           ${'svg'} {
             width: 40px;
             height: 40px;
-            color: ${colors.darkGreen};
+            color: ${colorsPalette.color1};
             transition: transform 0.5s;
           }
           &:hover {
-            background: ${colors.cardBGlight};
+            background: ${colorsPalette.color3};
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
-            color: ${colors.darkGreen};
+            color: ${colorsPalette.color1};
           }
         }
       }
       ${Right} {
         width: 50%;
-        background: ${colors.cardBGlight};
-        color: ${colors.baseWhite};
+        background: ${colorsPalette.cardBG};
+        /* color: ${colors.baseWhite}; */
         float: right;
         height: 100%;
         overflow: hidden;
@@ -151,7 +156,7 @@ const Wrapper = styled.div`
                 transition: transform 0.5s;
                 width: 50px;
                 height: 50px;
-                color: ${colors.darkGreen};
+                color: ${colorsPalette.color1};
                 &:hover {
                   transition: transform 0.5s;
                   transform: translateY(5px);
@@ -165,7 +170,7 @@ const Wrapper = styled.div`
           float: left;
           border-right: solid thin rgba(255, 255, 255, 0.3);
           height: 100%;
-          background: #94b9a9;
+          /* background: #94b9a9; */
           transition: transform 0.5s, background 0.5s;
           display: flex;
           flex-flow: row nowrap;
@@ -175,7 +180,7 @@ const Wrapper = styled.div`
             transition: transform 0.5s;
             width: 40px;
             height: 40px;
-            color: ${colors.lightGreen};
+            /* color: ${colorsPalette.color1}; */
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
@@ -186,7 +191,7 @@ const Wrapper = styled.div`
   }
   ${Inside} {
     z-index: 9;
-    background: ${colors.cardBGlight};
+    background: ${colorsPalette.color3};
     width: 140px;
     height: 140px;
     position: absolute;
@@ -199,7 +204,7 @@ const Wrapper = styled.div`
       position: absolute;
       right: 85px;
       top: 85px;
-      color: ${colors.darkGreen};
+      color: ${colorsPalette.color1};
       opacity: 1;
       width: 30px;
       height: 30px;

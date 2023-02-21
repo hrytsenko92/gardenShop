@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
-import { remove, itemType } from '../../../store/orderSlice';
+import { remove, removeAll, itemType } from '../../../store/orderSlice';
 import { useAppSelector, useAppDispatch } from '../../../store/hook';
 import { device } from '../../../assets/device';
 import { colors } from '../../../assets/colors';
@@ -220,6 +220,9 @@ const ShoppingCart: React.FC = () => {
   const handleRemove = (i: itemType) => {
     i ? dispatch(remove(i)) : null;
   };
+  const handleRemoveAll = () => {
+    dispatch(removeAll());
+  };
 
   const userData = {
     name,
@@ -228,7 +231,7 @@ const ShoppingCart: React.FC = () => {
     totalSum,
     orderstr,
   };
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.SyntheticEvent) => {
     e.preventDefault();
     emailjs
       .send(
@@ -239,6 +242,7 @@ const ShoppingCart: React.FC = () => {
       )
       .then(
         function (response) {
+          handleRemoveAll();
           console.log('SUCCESS!', response.status, response.text);
         },
         function (error) {
@@ -302,7 +306,7 @@ const ShoppingCart: React.FC = () => {
         ) : (
           <BoxForm onSubmit={sendEmail}>
             <BoxName>
-              <BoxLabel>Ім'я:</BoxLabel>
+              <BoxLabel>{'Ім\'я:'}</BoxLabel>
               <BoxInput type="text" value={name} onChange={changeName} />
             </BoxName>
             <BoxPhone>

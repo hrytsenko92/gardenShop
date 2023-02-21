@@ -23,7 +23,10 @@ export const orderSlice = createSlice({
     remove: (state, action: PayloadAction<itemType>) => {
       state.value = state.value.filter((item) => item.itemId !== action.payload.itemId);
     },
+    removeAll: (state) => {
+      state.value = state.value = [];
+    },
   },
 });
-export const { add, remove } = orderSlice.actions;
+export const { add, remove, removeAll } = orderSlice.actions;
 export default orderSlice.reducer;
