@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { remove, removeAll, itemType } from '../../../store/orderSlice';
 import { useAppSelector, useAppDispatch } from '../../../store/hook';
 import { device } from '../../../assets/device';
-import { colors } from '../../../assets/colors';
+import { colorsPalette } from '../../../assets/colors';
 
 const Container = styled.div`
   display: flex;
@@ -41,10 +41,10 @@ const CardWrapper = styled.div`
   justify-content: start;
   align-items: center;
   padding: 10px;
-  background-color: ${colors.cardBG};
+  background-color: ${colorsPalette.cardBG};
   border-radius: 7px;
   overflow: hidden;
-  color: ${colors.textGreen};
+  color: ${colorsPalette.color1};
 `;
 const ItemsContainer = styled.div`
   width: 100%;
@@ -68,7 +68,7 @@ const Item = styled.div`
   align-items: center;
   border-radius: 7px;
   overflow: hidden;
-  background-color: ${colors.itemBG};
+  background-color: ${colorsPalette.color6};
 `;
 const ItemName = styled.div``;
 const ItemSum = styled.div``;
@@ -97,10 +97,9 @@ const BoxForm = styled.form`
   width: 100%;
   height: 250px;
   margin: 10px 0px 0px;
-  background-color: ${colors.cardBG};
+  background-color: ${colorsPalette.cardBG};
   border-radius: 7px;
   overflow: hidden;
-  color: ${colors.textGreen};
   display: grid;
   justify-content: center;
   align-items: center;
@@ -119,6 +118,8 @@ const BoxLabel = styled.label`
 `;
 const BoxInput = styled.input`
   width: 100%;
+  height: 25px;
+  padding: 0px 10px;
 `;
 const BoxName = styled.div`
   @media ${device.mobileS} {
@@ -187,8 +188,8 @@ const Submit = styled.input`
   height: 35px;
   border: none;
   border-radius: 3px;
-  background-color: ${colors.lightGreen};
-  color: ${colors.baseWhite};
+  background-color: ${colorsPalette.color2};
+  color: ${colorsPalette.baseWhite};
 `;
 
 const ShoppingCart: React.FC = () => {
@@ -216,14 +217,12 @@ const ShoppingCart: React.FC = () => {
     e.preventDefault();
     setAdress(e.target.value);
   };
-
   const handleRemove = (i: itemType) => {
     i ? dispatch(remove(i)) : null;
   };
   const handleRemoveAll = () => {
     dispatch(removeAll());
   };
-
   const userData = {
     name,
     phone,
@@ -233,22 +232,24 @@ const ShoppingCart: React.FC = () => {
   };
   const sendEmail = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    emailjs
-      .send(
-        String(process.env.SERVICE_ID),
-        String(process.env.TEMPLATE_ID),
-        userData,
-        String(process.env.PUBLIC_KEY),
-      )
-      .then(
-        function (response) {
-          handleRemoveAll();
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        function (error) {
-          console.log('FAILED...', error);
-        },
-      );
+    userData.name.length > 3 && userData.phone.length === 11 && userData.adress.length > 7
+      ? emailjs
+          .send(
+            String(process.env.SERVICE_ID),
+            String(process.env.TEMPLATE_ID),
+            userData,
+            String(process.env.PUBLIC_KEY),
+          )
+          .then(
+            function (response) {
+              handleRemoveAll();
+              console.log('SUCCESS!', response.status, response.text);
+            },
+            function (error) {
+              console.log('FAILED...', error);
+            },
+          )
+      : null;
   };
 
   useEffect(() => {
@@ -306,7 +307,7 @@ const ShoppingCart: React.FC = () => {
         ) : (
           <BoxForm onSubmit={sendEmail}>
             <BoxName>
-              <BoxLabel>{'Ім\'я:'}</BoxLabel>
+              <BoxLabel>{"Ім'я:"}</BoxLabel>
               <BoxInput type="text" value={name} onChange={changeName} />
             </BoxName>
             <BoxPhone>

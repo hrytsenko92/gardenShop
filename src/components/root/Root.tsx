@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createRef } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useAppSelector } from '../../../store/hook';
 import styled from 'styled-components';
@@ -35,7 +35,7 @@ const Header = styled('header')`
 `;
 
 const Menu = styled('menu')`
-  padding: 0px 25px;
+  padding: 0px 15px;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -100,12 +100,13 @@ const Link = styled(NavLink)`
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
-  color: ${colorsPalette.color3};
+  white-space: nowrap;
+  color: ${colorsPalette.color2};
   ${'svg'} {
     width: 24px;
     height: 24px;
     margin-right: 5px;
-    stroke: ${colorsPalette.color3};
+    stroke: ${colorsPalette.color2};
   }
   &.active {
     color: ${colorsPalette.color1};
@@ -153,9 +154,15 @@ const Root = () => {
       transition: 'all 0.3s ease-in 0s',
     },
   });
+  const refHeader = createRef<HTMLDivElement>();
+  const refMenu = createRef<HTMLDivElement>();
   useEffect(() => {
     window.onscroll = function () {
-      window.scrollY >= 300
+      refHeader.current &&
+      refMenu.current &&
+      window.scrollY >=
+        refHeader.current.getBoundingClientRect().height -
+          refMenu.current.getBoundingClientRect().height
         ? setScrollStyle({
             bg: {
               background: '#fffffa',
@@ -176,10 +183,9 @@ const Root = () => {
           });
     };
   }, [window.scrollY]);
-  console.log(window.scrollY);
   return (
     <Container>
-      <Menu style={scrollStyle.bg}>
+      <Menu ref={refMenu} style={scrollStyle.bg}>
         <Logotype>
           <Logo />
         </Logotype>
@@ -243,11 +249,11 @@ const Root = () => {
           </Link>
         </Nav>
       </Menu>
-      <Header>
-        <Title>Зробіть свій сад кращим разом з EcoSad</Title>
+      <Header ref={refHeader}>
+        <Title>Зробіть свій сад кращим разом з Екосад</Title>
         <SubTitle>
-          EcoSad - це інтернет-магазин екологічних саджанців дерев та кущів, що пропонує широкий
-          вибір рослин високої якості.
+          Ми пропонуємо широкий вибір саджанців дерев та кущів високої якості. При оптових
+          замовленнях діє додаткова знижка
         </SubTitle>
       </Header>
       <Main>

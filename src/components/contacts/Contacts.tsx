@@ -1,12 +1,14 @@
 import React from 'react';
 import ContactsMap from './ContactsMap';
 import styled from 'styled-components';
-import { colors } from '../../../assets/colors';
+import { colors, colorsPalette } from '../../../assets/colors';
+import { device } from '../../../assets/device';
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2.3fr;
+  color: ${colorsPalette.color1};
 `;
 const ContactsWrapper = styled.div`
   grid-column: 1/2;
@@ -32,12 +34,22 @@ const ContactName = styled.h3``;
 const ContactAdress = styled.p``;
 const PhoneAndEmail = styled.div`
   display: flex;
-  flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  gap: 15px;
+  @media screen and ${device.mobileS} {
+    flex-flow: column nowrap;
+  }
+  @media screen and ${device.mobileM} {
+    flex-flow: row nowrap;
+  }
 `;
-const ContactPhone = styled.a``;
-const ContactEmail = styled.a``;
+const ContactPhone = styled.a`
+  text-decoration: none;
+`;
+const ContactEmail = styled.a`
+  text-decoration: none;
+`;
 
 const MapWrapper = styled.div`
   grid-column: 1/2;

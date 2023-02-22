@@ -9,9 +9,9 @@ export const colors = {
   itemBG: '#c9c9c9',
 };
 export const colorsPalette = {
-  color1: '#245501',
-  color2: '#538d22',
-  color3: '#73a942',
+  color1: '#004b23',
+  color2: '#008000',
+  color3: '#8cb369',
   color4: '#aad576',
   color5: '#c5edac',
   color6: '#e0e2db',

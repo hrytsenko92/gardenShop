@@ -9,7 +9,7 @@ const StyledMapContainer = styled(MapContainer)`
 `;
 const ContactsMap: React.FC = () => {
   return (
-    <StyledMapContainer center={[48.412971, 27.135889]} zoom={6.5} scrollWheelZoom={false}>
+    <StyledMapContainer center={[48.40928, 27.13644]} zoom={6.5} scrollWheelZoom={false}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={[48.412971, 27.135889]}>
         <Popup>Знайти нас можна ось тут</Popup>
