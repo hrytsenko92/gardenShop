@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { add, itemType } from '../../../store/orderSlice';
 import styled from 'styled-components';
-import { colors, colorsPalette } from '../../../assets/colors';
+import { colorsPalette } from '../../../assets/colors';
+import { Item } from '../../../data/allData';
+
+type DataInfo = {
+  tData: Item[];
+};
 
 const Container = styled.div``;
 const Top = styled.div``;
@@ -116,7 +121,6 @@ const Wrapper = styled.div`
       ${Right} {
         width: 50%;
         background: ${colorsPalette.cardBG};
-        /* color: ${colors.baseWhite}; */
         float: right;
         height: 100%;
         overflow: hidden;
@@ -170,7 +174,6 @@ const Wrapper = styled.div`
           float: left;
           border-right: solid thin rgba(255, 255, 255, 0.3);
           height: 100%;
-          /* background: #94b9a9; */
           transition: transform 0.5s, background 0.5s;
           display: flex;
           flex-flow: row nowrap;
@@ -180,7 +183,6 @@ const Wrapper = styled.div`
             transition: transform 0.5s;
             width: 40px;
             height: 40px;
-            /* color: ${colorsPalette.color1}; */
           }
           &:hover ${'svg'} {
             transform: translateY(5px);
@@ -236,7 +238,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const CardItem: React.FC = () => {
+const CardItem: React.FC<DataInfo> = ({ tData }) => {
   const [isActive, setIsActive] = useState(false);
   const [count, setCount] = useState<number | string>(5);
   const [countDefault, setCountDefault] = useState<boolean>(true);
@@ -271,6 +273,7 @@ const CardItem: React.FC = () => {
   const handleClickDel = () => {
     setIsActive(false);
   };
+  console.log(tData);
   return (
     <Wrapper>
       <Container>

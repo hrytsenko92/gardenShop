@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactsMap from './ContactsMap';
 import styled from 'styled-components';
-import { colors, colorsPalette } from '../../../assets/colors';
+import { colorsPalette } from '../../../assets/colors';
 import { device } from '../../../assets/device';
 
 const Container = styled.div`
@@ -27,7 +27,7 @@ const ContactContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   gap: 15px;
-  background-color: ${colors.cardBG};
+  background-color: ${colorsPalette.cardBG};
 `;
 const ContactTitle = styled.h2``;
 const ContactName = styled.h3``;
@@ -76,7 +76,7 @@ const Contacts: React.FC = () => {
           <ContactName>Елла Андронік</ContactName>
           <ContactAdress>Чернівецька область, Дністровський район, село Вашківці </ContactAdress>
           <PhoneAndEmail>
-            <ContactPhone href="tel:0986030808">+38-098-603-08-08</ContactPhone>
+            <ContactPhone href="tel:0986030808">+38-098-603-08-08 (Viber, Telegram)</ContactPhone>
             <ContactEmail href="mailto:ella0986030880@gmail.com">
               ella0986030880@gmail.com
             </ContactEmail>

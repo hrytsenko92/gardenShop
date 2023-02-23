@@ -1,13 +1,3 @@
-import styled from 'styled-components';
-export const colors = {
-  textGreen: '#113b27',
-  darkGreen: '#639763',
-  lightGreen: '#638e7b',
-  cardBGlight: '#94b9a9',
-  baseWhite: '#ffffff',
-  cardBG: '#f1f1f1',
-  itemBG: '#c9c9c9',
-};
 export const colorsPalette = {
   color1: '#004b23',
   color2: '#008000',

@@ -66,57 +66,39 @@ const Home: React.FC = () => {
   const [berries, setBerries] = useState(true);
   const [fruitful, setFruitful] = useState(true);
   const [decorativeBushes, setDecorativeBushes] = useState(true);
-  const [conifers, setComifers] = useState(true);
 
-  console.log(allData);
   const selectAll = () => {
-    setAll(true),
-      setRoses(true),
-      setBerries(true),
-      setFruitful(true),
-      setDecorativeBushes(true),
-      setComifers(true);
+    setAll(true), setRoses(true), setBerries(true), setFruitful(true), setDecorativeBushes(true);
   };
   const selectRoses = () => {
     setAll(false),
       setRoses(true),
       setBerries(false),
       setFruitful(false),
-      setDecorativeBushes(false),
-      setComifers(false);
+      setDecorativeBushes(false);
   };
   const selectBerries = () => {
     setAll(false),
       setRoses(false),
       setBerries(true),
       setFruitful(false),
-      setDecorativeBushes(false),
-      setComifers(false);
+      setDecorativeBushes(false);
   };
   const selectFruitful = () => {
     setAll(false),
       setRoses(false),
       setBerries(false),
       setFruitful(true),
-      setDecorativeBushes(false),
-      setComifers(false);
+      setDecorativeBushes(false);
   };
   const selectDecorativeBushes = () => {
     setAll(false),
       setRoses(false),
       setBerries(false),
       setFruitful(false),
-      setDecorativeBushes(true),
-      setComifers(false);
+      setDecorativeBushes(true);
   };
-  const selectComifers = () => {
-    setAll(false),
-      setRoses(false),
-      setBerries(false),
-      setFruitful(false),
-      setDecorativeBushes(false),
-      setComifers(true);
-  };
+
   const buttonStyle = {
     backgroundColor: `${colorsPalette.color3}`,
     border: 'none',
@@ -153,21 +135,14 @@ const Home: React.FC = () => {
           style={decorativeBushes ? buttonStyle : { backgroundColor: 'transparent' }}
           onClick={selectDecorativeBushes}
         >
-          Декоративні кущі
-        </ButtonSelect>
-        <ButtonSelect
-          style={conifers ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectComifers}
-        >
-          Хвойні рослини
+          Декоративні
         </ButtonSelect>
       </ButtonWrapper>
       <Section>
-        {roses ? <CardItem /> : null}
-        {berries ? <CardItem /> : null}
-        {fruitful ? <CardItem /> : null}
-        {decorativeBushes ? <CardItem /> : null}
-        {conifers ? <CardItem /> : null}
+        {roses ? <CardItem tData={allData.roses} /> : null}
+        {berries ? <CardItem tData={allData.berries} /> : null}
+        {fruitful ? <CardItem tData={allData.fruinful} /> : null}
+        {decorativeBushes ? <CardItem tData={allData.decorative} /> : null}
       </Section>
     </Container>
   );
