@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { add, itemType } from '../../../store/orderSlice';
+import { add } from '../../../store/orderSlice';
 import styled from 'styled-components';
 import { colorsPalette } from '../../../assets/colors';
-import { Item } from '../../../data/allData';
+import { Item } from '../../../public/data/allData';
 
 type DataInfo = {
-  tData: Item[];
+  tData: Item;
 };
 
 const Container = styled.div``;
@@ -31,6 +31,9 @@ const Inside = styled.div``;
 const InsideIco = styled.div``;
 const Contents = styled.div``;
 const ItemDetail = styled.div``;
+const ItemDetailHeight = styled.div``;
+const ItemDetailMaturation = styled.div``;
+const ItemDetailInfo = styled.div``;
 
 const Wrapper = styled.div`
   width: 300px;
@@ -54,8 +57,6 @@ const Wrapper = styled.div`
     ${Top} {
       height: 80%;
       width: 100%;
-      background: url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg)
-        no-repeat center center;
       -webkit-background-size: 100%;
       -moz-background-size: 100%;
       -o-background-size: 100%;
@@ -71,10 +72,14 @@ const Wrapper = styled.div`
       ${H1} {
         margin: 0;
         padding: 0;
+        text-align: center;
+        font-size: 18px;
       }
       ${P} {
         margin: 0;
         padding: 0;
+        text-align: center;
+        font-size: 20px;
       }
       ${Left} {
         height: 100%;
@@ -85,12 +90,13 @@ const Wrapper = styled.div`
         ${Details1} {
           float: left;
           width: calc(70%);
-          display: flex;
-          flex-flow: column nowrap;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1.3fr 1fr;
           justify-content: center;
           align-items: center;
-          gap: 15px;
           height: 100%;
+          padding: 10px 0px;
         }
         ${Buy} {
           float: right;
@@ -234,6 +240,32 @@ const Wrapper = styled.div`
       transform: scale(0.5);
       transform: translateY(-200%);
       transition: opacity 0.2s, transform 0.8s;
+      ${ItemDetail} {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20px 20px auto;
+        gap: 5px;
+        color: ${colorsPalette.color1};
+        ${ItemDetailHeight} {
+          grid-column: 1/2;
+          grid-row: 1/2;
+          font-size: 20px;
+          text-align: center;
+        }
+        ${ItemDetailMaturation} {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          font-size: 18px;
+          text-align: center;
+        }
+        ${ItemDetailInfo} {
+          grid-column: 1/2;
+          grid-row: 3/4;
+          padding-top: 5px;
+          font-size: 15px;
+          overflow: hidden;
+        }
+      }
     }
   }
 `;
@@ -277,12 +309,19 @@ const CardItem: React.FC<DataInfo> = ({ tData }) => {
   return (
     <Wrapper>
       <Container>
-        <Top />
+        <Top
+          style={{
+            backgroundImage: `url(${tData.img})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          }}
+        />
         <Bottom className={isActive ? 'clicked' : ''}>
           <Left>
             <Details1>
-              <H1>Вишня</H1>
-              <P>250грн</P>
+              <H1>{tData.name}</H1>
+              <P>{tData.price} - грн/шт</P>
             </Details1>
             <Buy onClick={handleClickAdd}>
               <svg viewBox="0 0 24 24" fill="#285A43" xmlns="http://www.w3.org/2000/svg">
@@ -350,16 +389,9 @@ const CardItem: React.FC<DataInfo> = ({ tData }) => {
         </InsideIco>
         <Contents>
           <ItemDetail>
-            <h3>Some title</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad corporis cumque delectus
-              dolor dolorem doloremque eligendi, eos id in itaque maxime molestias praesentium
-              quidem ratione veritatis! Laboriosam maiores minus nisi praesentium quas. Accusantium
-              asperiores consectetur cum esse maiores officiis omnis quasi veniam. Aliquam
-              architecto consequatur, dignissimos facere impedit in itaque laudantium minus nemo,
-              officia perferendis perspiciatis porro quia quos recusandae totam veniam. Aliquid,
-              dolorem, fuga?
-            </p>
+            <ItemDetailHeight>Висота: {tData.height} см</ItemDetailHeight>
+            <ItemDetailMaturation>Період цвітіння: {tData.maturation}</ItemDetailMaturation>
+            <ItemDetailInfo>{tData.details}</ItemDetailInfo>
           </ItemDetail>
         </Contents>
       </Inside>

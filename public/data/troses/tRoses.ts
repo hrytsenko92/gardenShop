@@ -5,6 +5,7 @@ export const roses: Item[] = [
     id: 4001,
     cls: 'троянда',
     name: 'Троянда чайно-гібридна Амалія',
+    price: 10,
     height: '80-90',
     maturation: '-',
     details:

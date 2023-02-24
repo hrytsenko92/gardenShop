@@ -3,8 +3,9 @@ import id3001 from './id3001.jpeg';
 export const decorative: Item[] = [
   {
     id: 3001,
-    cls: 'nez',
+    cls: 'туя',
     name: 'Brabant',
+    price: 10,
     height: '1500-2000',
     maturation: 'червень',
     details:

@@ -1,6 +1,6 @@
 import { berries } from './tberries/tBerries';
 import { decorative } from './tdecorative/tDecorative';
-import { fruinful } from './tfruinful/tFruinful';
+import { fruitful } from './tfruinful/tFruinful';
 import { roses } from './troses/tRoses';
 
 export type AllItems = {
@@ -10,10 +10,11 @@ export type Item = {
   id: number;
   cls: string;
   name: string;
+  price: number;
   height: string;
   maturation: string;
   details: string;
   img: string;
 };
 
-export const allData: AllItems = { berries, decorative, fruinful, roses };
+export const allData: AllItems = { berries, decorative, fruitful, roses };

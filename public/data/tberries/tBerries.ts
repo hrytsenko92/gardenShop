@@ -5,6 +5,7 @@ export const berries: Item[] = [
     id: 2001,
     cls: 'смородина',
     name: 'Краса Львова',
+    price: 10,
     height: '100',
     maturation: 'червень',
     details:

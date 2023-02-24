@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardItem from '@app/components/card/CardItem';
-import { allData } from '../../../data/allData';
+import { allData } from '../../../public/data/allData';
 import { device } from '../../../assets/device';
 import { colorsPalette } from '../../../assets/colors';
 
@@ -139,10 +139,26 @@ const Home: React.FC = () => {
         </ButtonSelect>
       </ButtonWrapper>
       <Section>
-        {roses ? <CardItem tData={allData.roses} /> : null}
-        {berries ? <CardItem tData={allData.berries} /> : null}
-        {fruitful ? <CardItem tData={allData.fruinful} /> : null}
-        {decorativeBushes ? <CardItem tData={allData.decorative} /> : null}
+        {roses && allData.roses
+          ? allData.roses.map((i) => {
+              return <CardItem key={i.id} tData={i} />;
+            })
+          : null}
+        {berries && allData.berries
+          ? allData.berries.map((i) => {
+              return <CardItem key={i.id} tData={i} />;
+            })
+          : null}
+        {fruitful && allData.fruitful
+          ? allData.fruitful.map((i) => {
+              return <CardItem key={i.id} tData={i} />;
+            })
+          : null}
+        {decorativeBushes && allData.decorative
+          ? allData.decorative.map((i) => {
+              return <CardItem key={i.id} tData={i} />;
+            })
+          : null}
       </Section>
     </Container>
   );

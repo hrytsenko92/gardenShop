@@ -122,7 +122,7 @@ const Title = styled('h1')`
   color: ${colorsPalette.color7};
   font-size: 25px;
   @media screen and ${device.tabletS} {
-    font-size: 30px;
+    font-size: 35px;
   }
   letter-spacing: 2px;
   margin: 0px 15px;
