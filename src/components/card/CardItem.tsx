@@ -237,33 +237,34 @@ const Wrapper = styled.div`
     ${Contents} {
       padding: 5%;
       opacity: 0;
+      height: 100%;
       transform: scale(0.5);
       transform: translateY(-200%);
       transition: opacity 0.2s, transform 0.8s;
       ${ItemDetail} {
+        height: 100%;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 20px 20px auto;
+        grid-template-rows: 20px 35px auto;
         gap: 5px;
         color: ${colorsPalette.color1};
         ${ItemDetailHeight} {
           grid-column: 1/2;
           grid-row: 1/2;
-          font-size: 20px;
+          font-size: 16px;
           text-align: center;
         }
         ${ItemDetailMaturation} {
           grid-column: 1/2;
           grid-row: 2/3;
-          font-size: 18px;
+          font-size: 14px;
           text-align: center;
         }
         ${ItemDetailInfo} {
           grid-column: 1/2;
           grid-row: 3/4;
-          padding-top: 5px;
-          font-size: 15px;
-          overflow: hidden;
+          font-size: 14px;
+          overflow: scroll;
         }
       }
     }

@@ -46,7 +46,7 @@ const ButtonWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   @media screen and ${device.tabletM} {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 `;
 const ButtonSelect = styled.button`
