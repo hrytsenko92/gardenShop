@@ -9,6 +9,7 @@ import { createGlobalStyle } from 'styled-components';
 import Root from '@app/components/root/Root';
 import Home from '@app/components/home/Home';
 import Contacts from '@app/components/contacts/Contacts';
+import HowToPlant from './components/howToPlant/howToPlant';
 import ShoppingCart from '@app/components/shoppingCard/ShoppingСart';
 import NotFound from '@app/components/root/NotFound';
 
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Root />}>
       <Route index element={<Home />} />
       <Route path="contacts" element={<Contacts />} />
+      <Route path="howToPlant" element={<HowToPlant />} />
       <Route path="shoppingCart" element={<ShoppingCart />} />
       <Route path="*" element={<NotFound />} />
     </Route>,
