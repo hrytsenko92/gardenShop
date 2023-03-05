@@ -8,25 +8,20 @@ import { Item } from '../../../public/data/allData';
 type DataInfo = {
   tData: Item;
 };
-
 const Container = styled.div``;
 const Top = styled.div``;
 const Bottom = styled.div``;
-
 const Left = styled.div``;
 const Details1 = styled.div``;
 const H1 = styled.h1``;
 const P = styled.p``;
 const Buy = styled.div``;
-
 const Right = styled.div``;
 const Details2 = styled.div``;
 const Remove = styled.div``;
-
 const CountWrapper = styled.form``;
 const ItemsCount = styled.input``;
 const ItemSubmit = styled.button``;
-
 const Inside = styled.div``;
 const InsideIco = styled.div``;
 const Contents = styled.div``;
@@ -34,7 +29,6 @@ const ItemDetail = styled.div``;
 const ItemDetailHeight = styled.div``;
 const ItemDetailMaturation = styled.div``;
 const ItemDetailInfo = styled.div``;
-
 const Wrapper = styled.div`
   width: 300px;
   height: 500px;
@@ -270,16 +264,12 @@ const Wrapper = styled.div`
     }
   }
 `;
-
 const CardItem: React.FC<DataInfo> = ({ tData }) => {
   const [isActive, setIsActive] = useState(false);
   const [count, setCount] = useState<number | string>(5);
   const [countDefault, setCountDefault] = useState<boolean>(true);
-
   const dispatch = useDispatch();
-
   const countReset = () => (countDefault ? setCount('') : countDefault);
-
   const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const result = event.target.value.replace(/\D/g, '');
@@ -299,14 +289,12 @@ const CardItem: React.FC<DataInfo> = ({ tData }) => {
     setCountDefault(true);
     setIsActive(false);
   };
-
   const handleClickAdd = () => {
     setIsActive(true);
   };
   const handleClickDel = () => {
     setIsActive(false);
   };
-  console.log(tData);
   return (
     <Wrapper>
       <Container>

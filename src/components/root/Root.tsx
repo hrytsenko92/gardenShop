@@ -25,12 +25,7 @@ const Header = styled('header')`
   align-items: center;
   gap: 25px;
   grid-template-columns: 1fr;
-  @media screen and ${device.mobileS} {
-    grid-template-rows: 120px 100px 75px;
-  }
-  @media screen and ${device.mobileM} {
-    grid-template-rows: 120px 100px 100px;
-  }
+  grid-template-rows: 120px 100px 100px;
   color: ${colorsPalette.baseWhite};
 `;
 
@@ -42,16 +37,17 @@ const Menu = styled('menu')`
   width: 100%;
   z-index: 110;
   overflow: hidden;
-  @media screen and ${device.mobileS} {
-    height: 120px;
-  }
-  @media screen and ${device.tabletS} {
-    height: 75px;
-  }
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
+  @media ${device.mobileS} {
+    height: 150px;
+    grid-template-rows: 60px 90px;
+  }
+  @media ${device.tabletS} {
+    height: 75px;
+    grid-template-rows: 25px 50px;
+  }
 `;
 const Logotype = styled.div`
   @media ${device.mobileS} {
@@ -77,19 +73,30 @@ const Nav = styled('nav')`
     grid-row: 2/3;
   }
   @media ${device.tabletS} {
-    grid-column: 5/9;
+    grid-column: 4/9;
     grid-row: 1/3;
   }
   @media ${device.tabletM} {
-    grid-column: 6/9;
+    grid-column: 5/9;
     grid-row: 1/3;
   }
   display: grid;
+  justify-content: center;
+  align-items: center;
+  @media ${device.mobileS} {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  @media ${device.tabletS} {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
 `;
 const Link = styled(NavLink)`
   width: 120px;
   height: 35px;
   border-radius: 3px;
+  margin: auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -118,7 +125,7 @@ const Title = styled('h1')`
   text-align: center;
   color: ${colorsPalette.color7};
   font-size: 25px;
-  @media screen and ${device.tabletS} {
+  @media ${device.tabletS} {
     font-size: 35px;
   }
   letter-spacing: 2px;
@@ -131,7 +138,7 @@ const SubTitle = styled('h4')`
   padding-bottom: 25px;
   color: ${colorsPalette.color7};
   width: 90%;
-  @media screen and ${device.tabletS} {
+  @media ${device.tabletS} {
     width: 75%;
   }
   text-align: center;

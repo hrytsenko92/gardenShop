@@ -17,16 +17,16 @@ const Section = styled.section`
   align-items: center;
   grid-template-rows: auto;
   gap: 25px;
-  @media screen and ${device.mobileS} {
+  @media ${device.mobileS} {
     grid-template-columns: 1fr;
   }
-  @media screen and ${device.tabletS} {
+  @media ${device.tabletS} {
     grid-template-columns: 1fr 1fr;
   }
-  @media screen and ${device.tabletM} {
+  @media ${device.tabletM} {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @media screen and ${device.laptop} {
+  @media ${device.laptop} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `;
@@ -36,16 +36,16 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 15px;
-  @media screen and ${device.mobileS} {
+  @media ${device.mobileS} {
     grid-template-columns: 1fr 1fr;
   }
-  @media screen and ${device.mobileM} {
+  @media ${device.mobileM} {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  @media screen and ${device.tabletS} {
+  @media ${device.tabletS} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  @media screen and ${device.tabletM} {
+  @media ${device.tabletM} {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 `;
@@ -59,7 +59,6 @@ const ButtonSelect = styled.button`
   font-size: 15px;
   cursor: pointer;
 `;
-
 const Home: React.FC = () => {
   const [all, setAll] = useState(true);
   const [roses, setRoses] = useState(true);
@@ -98,12 +97,10 @@ const Home: React.FC = () => {
       setFruitful(false),
       setDecorativeBushes(true);
   };
-
   const buttonStyle = {
     backgroundColor: `${colorsPalette.color3}`,
     border: 'none',
   };
-
   return (
     <Container>
       <ButtonWrapper>

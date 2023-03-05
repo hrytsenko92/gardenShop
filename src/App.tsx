@@ -9,7 +9,7 @@ import { createGlobalStyle } from 'styled-components';
 import Root from '@app/components/root/Root';
 import Home from '@app/components/home/Home';
 import Contacts from '@app/components/contacts/Contacts';
-import HowToPlant from './components/howToPlant/howToPlant';
+import HowToPlant from './components/howToPlant/HowToPlant';
 import ShoppingCart from '@app/components/shoppingCard/ShoppingСart';
 import NotFound from '@app/components/root/NotFound';
 
@@ -22,7 +22,6 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 body {
-  position: relative;
   max-width: 1440px;
   margin: 0 auto;
   font-family: 'Lato', sans-serif;

@@ -37,10 +37,10 @@ const PhoneAndEmail = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 15px;
-  @media screen and ${device.mobileS} {
+  @media ${device.mobileS} {
     flex-flow: column nowrap;
   }
-  @media screen and ${device.mobileM} {
+  @media ${device.mobileM} {
     flex-flow: row nowrap;
   }
 `;
