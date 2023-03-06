@@ -26,16 +26,16 @@ const ButtonsWrapper = styled.div`
     grid-template-rows: auto;
   }
   @media ${device.mobileM} {
-    grid-column: 2/-2;
-    grid-row: 2/3;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
   }
   @media ${device.tabletS} {
-    grid-column: 4/9;
-    grid-row: 1/3;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
   }
   @media ${device.tabletM} {
-    grid-column: 5/9;
-    grid-row: 1/3;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
   }
 `;
 const Button = styled.button`
@@ -76,14 +76,14 @@ const HowToPlant: React.FC = () => {
           Плодові
         </Button>
         <Button
-          style={isActiveBTN === 4 ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={() => changeIsActive(4)}
+          style={isActiveBTN === 2 ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={() => changeIsActive(2)}
         >
           Персики
         </Button>
         <Button
-          style={isActiveBTN === 4 ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={() => changeIsActive(4)}
+          style={isActiveBTN === 3 ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={() => changeIsActive(3)}
         >
           Декоративні
         </Button>
@@ -94,8 +94,8 @@ const HowToPlant: React.FC = () => {
           Ягідні
         </Button>
         <Button
-          style={isActiveBTN === 4 ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={() => changeIsActive(4)}
+          style={isActiveBTN === 5 ? buttonStyle : { backgroundColor: 'transparent' }}
+          onClick={() => changeIsActive(5)}
         >
           Троянди
         </Button>
