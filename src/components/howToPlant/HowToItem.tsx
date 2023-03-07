@@ -18,15 +18,18 @@ const TitleWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 15px;
-  text-align: center;
+  width: 100%;
+  /* text-align: center; */
 `;
 const Title = styled.h4`
   font-size: 1rem;
+  text-align: center;
 `;
 const Image = styled.div`
   width: 90%;
   height: auto;
   aspect-ratio: 2/1;
+  border-radius: 7px;
 `;
 const Article = styled.div`
   width: 100%;
@@ -48,8 +51,7 @@ const HowToItem: React.FC<DataInfo> = ({ data }) => {
       <Container>
         <TitleWrapper>
           <Title>
-            {`Посадка ${data.name} - кропітлива та важлива процедура, яка вимагає уваги та підготовки
-            але при правильній підготовці може приносити багато задоволення та користі. Якщо ви
+            {`Якщо ви
             плануєте посадку ${data.name}, ось кілька порад, які допоможуть вам зробити це правильно.`}
           </Title>
         </TitleWrapper>

@@ -6,6 +6,7 @@ const StyledMapContainer = styled(MapContainer)`
   @import '~leaflet/dist/leaflet.css';
   @import '~react-leaflet-markercluster/dist/styles.min.css';
   height: 100%;
+  z-index: 1;
 `;
 const ContactsMap: React.FC = () => {
   return (

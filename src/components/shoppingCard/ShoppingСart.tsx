@@ -56,7 +56,6 @@ const ItemsContainer = styled.div`
   gap: 10px;
 `;
 const Item = styled.div`
-  font-size: 13px;
   width: 100%;
   height: 50px;
   padding: 0px 10px;
@@ -70,9 +69,15 @@ const Item = styled.div`
   overflow: hidden;
   background-color: ${colorsPalette.color6};
 `;
-const ItemName = styled.div``;
-const ItemSum = styled.div``;
-const ItemTotalPrice = styled.div``;
+const ItemName = styled.div`
+  font-size: 16px;
+`;
+const ItemSum = styled.div`
+  font-size: 13px;
+`;
+const ItemTotalPrice = styled.div`
+  font-size: 13px;
+`;
 const ItemRemove = styled.div`
   justify-self: end;
 `;
