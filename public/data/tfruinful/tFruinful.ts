@@ -73,7 +73,7 @@ export const fruitful: Item[] = [
     id: 1001,
     cls: 'вишня',
     name: 'Чорнокорка',
-    price: 10,
+    price: 150,
     height: '300',
     maturation: 'травень',
     details:
@@ -84,7 +84,7 @@ export const fruitful: Item[] = [
     id: 1002,
     cls: 'вишня',
     name: 'Шпанка',
-    price: 10,
+    price: 150,
     height: '600',
     maturation: 'травень',
     details:
@@ -95,7 +95,7 @@ export const fruitful: Item[] = [
     id: 1003,
     cls: 'вишня',
     name: 'Норд Стар',
-    price: 10,
+    price: 150,
     height: '300',
     maturation: 'травень',
     details:
@@ -106,7 +106,7 @@ export const fruitful: Item[] = [
     id: 1004,
     cls: 'вишня',
     name: 'Люцина',
-    price: 10,
+    price: 150,
     height: '200-400',
     maturation: 'травень',
     details:
@@ -117,7 +117,7 @@ export const fruitful: Item[] = [
     id: 1005,
     cls: 'вишня',
     name: 'Черевишня',
-    price: 10,
+    price: 150,
     height: '150-350',
     maturation: 'травень',
     details:
@@ -128,7 +128,7 @@ export const fruitful: Item[] = [
     id: 1006,
     cls: 'вишня',
     name: 'Колоновидна',
-    price: 10,
+    price: 150,
     height: '200-250',
     maturation: 'травень',
     details:
@@ -140,7 +140,7 @@ export const fruitful: Item[] = [
     id: 1007,
     cls: 'черешня',
     name: 'Мелітопольска',
-    price: 10,
+    price: 150,
     height: '500-600',
     maturation: 'травень',
     details:
@@ -151,7 +151,7 @@ export const fruitful: Item[] = [
     id: 1008,
     cls: 'черешня',
     name: 'Ярославна',
-    price: 10,
+    price: 150,
     height: '250-350',
     maturation: 'травень',
     details:
@@ -163,7 +163,7 @@ export const fruitful: Item[] = [
     id: 1009,
     cls: 'черешня',
     name: 'Джерело',
-    price: 10,
+    price: 150,
     height: '200-400',
     maturation: 'травень',
     details:
@@ -174,7 +174,7 @@ export const fruitful: Item[] = [
     id: 1010,
     cls: 'черешня',
     name: 'Присадибна',
-    price: 10,
+    price: 150,
     height: '350-550',
     maturation: 'травень',
     details:
@@ -186,7 +186,7 @@ export const fruitful: Item[] = [
     id: 1011,
     cls: 'черешня',
     name: 'Мелітопольська Чорна',
-    price: 10,
+    price: 150,
     height: '300-600',
     maturation: 'травень',
     details:
@@ -198,7 +198,7 @@ export const fruitful: Item[] = [
     id: 1012,
     cls: 'черешня',
     name: 'Любава',
-    price: 10,
+    price: 150,
     height: '150-200',
     maturation: 'травень',
     details:
@@ -210,7 +210,7 @@ export const fruitful: Item[] = [
     id: 1013,
     cls: 'черешня',
     name: 'Дрогана Жовта',
-    price: 10,
+    price: 150,
     height: '300-600',
     maturation: 'травень',
     details:
@@ -222,7 +222,7 @@ export const fruitful: Item[] = [
     id: 1014,
     cls: 'черешня',
     name: 'Валерій Чкалов',
-    price: 10,
+    price: 150,
     height: '350-400',
     maturation: 'травень',
     details:
@@ -234,7 +234,7 @@ export const fruitful: Item[] = [
     id: 1015,
     cls: 'черешня',
     name: 'Наполеон',
-    price: 10,
+    price: 150,
     height: '500-600',
     maturation: 'травень',
     details:
@@ -246,7 +246,7 @@ export const fruitful: Item[] = [
     id: 1016,
     cls: 'черешня',
     name: 'Китаївська чорна',
-    price: 10,
+    price: 150,
     height: '250-400',
     maturation: 'травень',
     details:
@@ -258,7 +258,7 @@ export const fruitful: Item[] = [
     id: 1017,
     cls: 'черешня',
     name: 'Кишинівська великоплідна',
-    price: 10,
+    price: 150,
     height: '450-600',
     maturation: 'травень',
     details:
@@ -270,7 +270,7 @@ export const fruitful: Item[] = [
     id: 1018,
     cls: 'слива',
     name: 'Кабардинка',
-    price: 10,
+    price: 150,
     height: '300-400',
     maturation: 'червень',
     details:
@@ -282,7 +282,7 @@ export const fruitful: Item[] = [
     id: 1019,
     cls: 'слива',
     name: 'Чачакская Наиболее',
-    price: 10,
+    price: 150,
     height: '350-400',
     maturation: 'червень',
     details:
@@ -294,7 +294,7 @@ export const fruitful: Item[] = [
     id: 1020,
     cls: 'слива',
     name: 'Стенлей',
-    price: 10,
+    price: 150,
     height: '150-300',
     maturation: 'червень',
     details:
@@ -306,7 +306,7 @@ export const fruitful: Item[] = [
     id: 1021,
     cls: 'слива',
     name: 'Віжен',
-    price: 10,
+    price: 150,
     height: '200-400',
     maturation: 'червень',
     details:
@@ -318,7 +318,7 @@ export const fruitful: Item[] = [
     id: 1022,
     cls: 'слива',
     name: 'Кірке',
-    price: 10,
+    price: 150,
     height: '200-300',
     maturation: 'червень',
     details:
@@ -330,7 +330,7 @@ export const fruitful: Item[] = [
     id: 1023,
     cls: 'слива',
     name: 'Ренклод',
-    price: 10,
+    price: 150,
     height: '200-350',
     maturation: 'червень',
     details:
@@ -342,7 +342,7 @@ export const fruitful: Item[] = [
     id: 1024,
     cls: 'слива',
     name: 'Президент',
-    price: 10,
+    price: 150,
     height: '150-300',
     maturation: 'червень',
     details:
@@ -354,7 +354,7 @@ export const fruitful: Item[] = [
     id: 1025,
     cls: 'слива',
     name: 'Кардинал',
-    price: 10,
+    price: 150,
     height: '200-300',
     maturation: 'червень',
     details:
@@ -366,7 +366,7 @@ export const fruitful: Item[] = [
     id: 1026,
     cls: 'слива',
     name: 'Венгерка Ювілейна',
-    price: 10,
+    price: 150,
     height: '250-300',
     maturation: 'червень',
     details:
@@ -378,7 +378,7 @@ export const fruitful: Item[] = [
     id: 1027,
     cls: 'алича',
     name: 'Кубанська Комета',
-    price: 10,
+    price: 150,
     height: '150-250',
     maturation: 'червень',
     details:
@@ -390,7 +390,7 @@ export const fruitful: Item[] = [
     id: 1028,
     cls: 'слива',
     name: 'Колоновидна',
-    price: 10,
+    price: 150,
     height: '150-200',
     maturation: 'червень',
     details:
@@ -402,7 +402,7 @@ export const fruitful: Item[] = [
     id: 1029,
     cls: 'персик',
     name: 'Ред-Хевен',
-    price: 10,
+    price: 150,
     height: '300-400',
     maturation: 'травень',
     details:
@@ -414,7 +414,7 @@ export const fruitful: Item[] = [
     id: 1030,
     cls: 'персик',
     name: 'Білий лебідь',
-    price: 10,
+    price: 150,
     height: '200-300',
     maturation: 'травень',
     details:
@@ -426,7 +426,7 @@ export const fruitful: Item[] = [
     id: 1031,
     cls: 'персик',
     name: 'Коллінз',
-    price: 10,
+    price: 150,
     height: '200-400',
     maturation: 'травень',
     details:
@@ -438,7 +438,7 @@ export const fruitful: Item[] = [
     id: 1032,
     cls: 'персик',
     name: 'Нектарин',
-    price: 10,
+    price: 150,
     height: '150-300',
     maturation: 'травень',
     details:
@@ -450,7 +450,7 @@ export const fruitful: Item[] = [
     id: 1033,
     cls: 'персик',
     name: 'Колоновидний',
-    price: 10,
+    price: 150,
     height: '100-180',
     maturation: 'травень',
     details:
@@ -462,7 +462,7 @@ export const fruitful: Item[] = [
     id: 1034,
     cls: 'абрикос',
     name: 'Київський ранній',
-    price: 10,
+    price: 150,
     height: '200-400',
     maturation: 'травень',
     details:
@@ -474,7 +474,7 @@ export const fruitful: Item[] = [
     id: 1035,
     cls: 'абрикос',
     name: 'Червонощокий',
-    price: 10,
+    price: 150,
     height: '300-450',
     maturation: 'травень',
     details:
@@ -486,7 +486,7 @@ export const fruitful: Item[] = [
     id: 1036,
     cls: 'абрикос',
     name: 'Ананасний',
-    price: 10,
+    price: 150,
     height: '300-550',
     maturation: 'травень',
     details:
@@ -498,7 +498,7 @@ export const fruitful: Item[] = [
     id: 1037,
     cls: 'абрикос',
     name: 'Золотий Ювілей',
-    price: 10,
+    price: 150,
     height: '250-400',
     maturation: 'травень',
     details:
@@ -510,7 +510,7 @@ export const fruitful: Item[] = [
     id: 1038,
     cls: 'яблуня',
     name: 'Паперівка',
-    price: 10,
+    price: 150,
     height: '350-500',
     maturation: 'травень',
     details:
@@ -522,7 +522,7 @@ export const fruitful: Item[] = [
     id: 1039,
     cls: 'яблуня',
     name: 'Женева Ерлі',
-    price: 10,
+    price: 80,
     height: '200-300',
     maturation: 'травень',
     details:
@@ -534,7 +534,7 @@ export const fruitful: Item[] = [
     id: 1040,
     cls: 'яблуня',
     name: 'Зоря Поділля',
-    price: 10,
+    price: 80,
     height: '250-400',
     maturation: 'травень',
     details:
@@ -546,7 +546,7 @@ export const fruitful: Item[] = [
     id: 1041,
     cls: 'яблуня',
     name: 'Теремок',
-    price: 10,
+    price: 80,
     height: '300-350',
     maturation: 'травень',
     details:
@@ -558,7 +558,7 @@ export const fruitful: Item[] = [
     id: 1042,
     cls: 'яблуня',
     name: 'Слава Переможцям',
-    price: 10,
+    price: 80,
     height: '450-600',
     maturation: 'травень',
     details:
@@ -570,7 +570,7 @@ export const fruitful: Item[] = [
     id: 1043,
     cls: 'яблуня',
     name: 'Амбассі',
-    price: 10,
+    price: 80,
     height: '250-350',
     maturation: 'травень',
     details:
@@ -582,7 +582,7 @@ export const fruitful: Item[] = [
     id: 1044,
     cls: 'яблуня',
     name: 'Топаз',
-    price: 10,
+    price: 80,
     height: '200-350',
     maturation: 'травень',
     details:
@@ -594,7 +594,7 @@ export const fruitful: Item[] = [
     id: 1045,
     cls: 'яблуня',
     name: 'Чемпіон',
-    price: 10,
+    price: 80,
     height: '300-500',
     maturation: 'травень',
     details:
@@ -606,7 +606,7 @@ export const fruitful: Item[] = [
     id: 1046,
     cls: 'яблуня',
     name: 'Райка',
-    price: 10,
+    price: 80,
     height: '300-500',
     maturation: 'травень',
     details:
@@ -618,7 +618,7 @@ export const fruitful: Item[] = [
     id: 1047,
     cls: 'яблуня',
     name: 'Айдаред',
-    price: 10,
+    price: 80,
     height: '300-350',
     maturation: 'травень',
     details:
@@ -630,7 +630,7 @@ export const fruitful: Item[] = [
     id: 1048,
     cls: 'яблуня',
     name: 'Ренет Симиренка',
-    price: 10,
+    price: 80,
     height: '450-500',
     maturation: 'травень',
     details:
@@ -642,7 +642,7 @@ export const fruitful: Item[] = [
     id: 1049,
     cls: 'яблуня',
     name: 'Лігол',
-    price: 10,
+    price: 80,
     height: '300-350',
     maturation: 'травень',
     details:
@@ -654,7 +654,7 @@ export const fruitful: Item[] = [
     id: 1050,
     cls: 'яблуня',
     name: 'Гранні Сміт',
-    price: 10,
+    price: 80,
     height: '250-350',
     maturation: 'травень',
     details:
@@ -666,7 +666,7 @@ export const fruitful: Item[] = [
     id: 1051,
     cls: 'яблуня',
     name: 'Флоріна',
-    price: 10,
+    price: 80,
     height: '200-300',
     maturation: 'травень',
     details:
@@ -678,7 +678,7 @@ export const fruitful: Item[] = [
     id: 1052,
     cls: 'яблуня',
     name: 'Пінова',
-    price: 10,
+    price: 80,
     height: '300-400',
     maturation: 'травень',
     details:
@@ -690,7 +690,7 @@ export const fruitful: Item[] = [
     id: 1053,
     cls: 'яблуня',
     name: 'Голден Делішес',
-    price: 10,
+    price: 80,
     height: '300-400',
     maturation: 'травень',
     details:
@@ -702,7 +702,7 @@ export const fruitful: Item[] = [
     id: 1054,
     cls: 'яблуня',
     name: 'Еліза',
-    price: 10,
+    price: 80,
     height: '250-400',
     maturation: 'травень',
     details:
@@ -714,7 +714,7 @@ export const fruitful: Item[] = [
     id: 1055,
     cls: 'яблуня',
     name: 'Фуджі',
-    price: 10,
+    price: 80,
     height: '300-500',
     maturation: 'травень',
     details:
@@ -726,7 +726,7 @@ export const fruitful: Item[] = [
     id: 1056,
     cls: 'яблуня',
     name: 'Рубін Стар',
-    price: 10,
+    price: 80,
     height: '250-350',
     maturation: 'травень',
     details:
@@ -738,7 +738,7 @@ export const fruitful: Item[] = [
     id: 1057,
     cls: 'яблуня',
     name: 'Бребурн',
-    price: 10,
+    price: 80,
     height: '300-500',
     maturation: 'травень',
     details:
@@ -750,7 +750,7 @@ export const fruitful: Item[] = [
     id: 1058,
     cls: 'яблуня',
     name: 'Ред Джонапринц',
-    price: 10,
+    price: 80,
     height: '200-300',
     maturation: 'травень',
     details:
@@ -762,7 +762,7 @@ export const fruitful: Item[] = [
     id: 1059,
     cls: 'яблуня',
     name: 'Колоновидна',
-    price: 10,
+    price: 80,
     height: '150-300',
     maturation: 'травень',
     details:
@@ -774,7 +774,7 @@ export const fruitful: Item[] = [
     id: 1060,
     cls: 'груша',
     name: 'Улюблениця Клаппа',
-    price: 10,
+    price: 150,
     height: '300-450',
     maturation: 'травень',
     details:
@@ -786,7 +786,7 @@ export const fruitful: Item[] = [
     id: 1061,
     cls: 'груша',
     name: 'Вільямс Літній',
-    price: 10,
+    price: 150,
     height: '300-350',
     maturation: 'травень',
     details:
@@ -798,7 +798,7 @@ export const fruitful: Item[] = [
     id: 1062,
     cls: 'груша',
     name: 'Ноябрьская',
-    price: 10,
+    price: 150,
     height: '300-400',
     maturation: 'травень',
     details:
@@ -810,7 +810,7 @@ export const fruitful: Item[] = [
     id: 1063,
     cls: 'груша',
     name: 'Киргизька',
-    price: 10,
+    price: 150,
     height: '200-300',
     maturation: 'травень',
     details:
@@ -822,7 +822,7 @@ export const fruitful: Item[] = [
     id: 1064,
     cls: 'груша',
     name: 'Талгарська красуня',
-    price: 10,
+    price: 150,
     height: '200-350',
     maturation: 'травень',
     details:
@@ -834,7 +834,7 @@ export const fruitful: Item[] = [
     id: 1065,
     cls: 'груша',
     name: 'Колоновидна',
-    price: 10,
+    price: 150,
     height: '150-250',
     maturation: 'травень',
     details:
@@ -846,7 +846,7 @@ export const fruitful: Item[] = [
     id: 1066,
     cls: 'горіх',
     name: 'Грецький горіх',
-    price: 10,
+    price: 150,
     height: '400-500',
     maturation: 'ранній',
     details:
@@ -858,7 +858,7 @@ export const fruitful: Item[] = [
     id: 1067,
     cls: 'горіх',
     name: 'Фундук',
-    price: 10,
+    price: 150,
     height: '300-600',
     maturation: 'ранній',
     details:
@@ -870,7 +870,7 @@ export const fruitful: Item[] = [
     id: 1068,
     cls: 'шовковиця',
     name: 'Шовковиця чорна "Чарівність"',
-    price: 10,
+    price: 150,
     height: '300-800',
     maturation: 'пізній',
     details:
@@ -882,7 +882,7 @@ export const fruitful: Item[] = [
     id: 1069,
     cls: 'шовковиця',
     name: 'Кизил Радість',
-    price: 10,
+    price: 150,
     height: '300-500',
     maturation: 'ранній',
     details:

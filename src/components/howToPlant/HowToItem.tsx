@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colorsPalette } from '../../../assets/colors';
 import { Item } from '../../../public/data/howTo/howTo';
 type DataInfo = {
   data: Item;
@@ -19,11 +20,11 @@ const TitleWrapper = styled.div`
   align-items: center;
   padding: 15px;
   width: 100%;
-  /* text-align: center; */
 `;
 const Title = styled.h4`
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
+  color: ${colorsPalette.color1};
 `;
 const Image = styled.div`
   width: 90%;
@@ -40,6 +41,7 @@ const Article = styled.div`
   align-items: center;
   gap: 15px;
   padding: 15px;
+  color: ${colorsPalette.color1};
 `;
 const Season = styled.div``;
 const PlaceSoil = styled.div``;

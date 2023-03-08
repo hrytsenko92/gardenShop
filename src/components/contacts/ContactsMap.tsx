@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const StyledMapContainer = styled(MapContainer)`
   @import '~leaflet/dist/leaflet.css';

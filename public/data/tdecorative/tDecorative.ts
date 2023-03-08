@@ -21,7 +21,18 @@ export const decorative: Item[] = [
   {
     id: 3001,
     cls: 'туя',
-    name: 'Smaragd',
+    name: 'Smaragd(2-х річна)',
+    price: 10,
+    height: '300-600',
+    maturation: '-',
+    details:
+      'Туя західна "Смарагд" - вічнозелене дерево з дуже вузькою, правильною конусовидною кроною та вертикальними, дуже густо розташованими гілками. Досягає 4-6 м заввишки і 1-2м завширшки. Характеризується середньою силою зростання. Річний приріст заввишки - 10-25 см, а завширшки - 4 см. У віці 10 років вона досягає 2 - 2,5 метрів заввишки. Хвоя: луската, насиченого смарагдово-зеленого кольору. На відміну від більшості сортів туй, "Смарагд" зберігає свій колір навіть узимку, не набуваючи коричневих та бурих відтінків.',
+    img: id3001,
+  },
+  {
+    id: 300101,
+    cls: 'туя',
+    name: 'Smaragd-(4-х річна)',
     price: 10,
     height: '300-600',
     maturation: '-',
@@ -32,7 +43,18 @@ export const decorative: Item[] = [
   {
     id: 3002,
     cls: 'туя',
-    name: 'Columna',
+    name: 'Columna (2-х річна)',
+    price: 10,
+    height: '400-900',
+    maturation: '-',
+    details:
+      'Туя західна "Columna" - це колоноподібний, високий сорт туї, що не вимагає коригування підстригання з вертикально розміщеними гілками. Забарвлення класичного зеленого кольору. Це відносно швидко зростаючий сорт, річний приріст якого – 20-25 сантиметрів. Гілки туї дуже розгалужені та густо розташовані. Туя Columna найвища серед усіх декоративних туй, стійка до вітрів, з дуже щільною кроною, яку часто використовують для створення високих і щільних живоплотів. Вона добре реагує на стрижку будь-якої пори року. Добре виглядає при посадці невеликими куртинами по три дерева.',
+    img: id3002,
+  },
+  {
+    id: 300201,
+    cls: 'туя',
+    name: 'Columna(4-х річна)',
     price: 10,
     height: '400-900',
     maturation: '-',
@@ -43,7 +65,18 @@ export const decorative: Item[] = [
   {
     id: 3003,
     cls: 'туя',
-    name: 'Golden Smaragd',
+    name: 'Golden Smaragd (2-х річна)',
+    price: 10,
+    height: '300-500',
+    maturation: '-',
+    details:
+      'Туя західна Голден Смарагд – це один із найкращих сортів західної туї. Рослина виділяється жовтою та дуже красивою декоративною формою. Елегантності їй надає правильна вузька конусоподібна крона, яка повільно росте. Декоративна рослина не є дуже вимогливою, але віддає перевагу дренажним грунтам. Туя тіньовитривала і морозостійка. Рослина любить сонце. Застосовується в різного виду посадки (одиночні, групові, живопліт, контейнери). Туя Смарагд просто незамінна для озеленення садової ділянки.',
+    img: id3003,
+  },
+  {
+    id: 300301,
+    cls: 'туя',
+    name: 'Golden Smaragd (4-х річна)',
     price: 10,
     height: '300-500',
     maturation: '-',
@@ -54,7 +87,18 @@ export const decorative: Item[] = [
   {
     id: 3004,
     cls: 'туя',
-    name: 'шаровидна "Danica"',
+    name: 'шаровидна "Danica" (2-х річна)',
+    price: 10,
+    height: '50-100',
+    maturation: '-',
+    details:
+      'Туя західна "Danica" - це одне з найкрасивіших декоративних рослин сучасного саду, що зберігає свою декоративність круглий рік. Являє собою карликову форму родини кипарисових, виведену в Данії в середині 20 століття. Зростає повільно, в рік по 5 см у висоту і ширину. Висота дорослої рослини 60см і стільки ж в діаметрі.',
+    img: id3004,
+  },
+  {
+    id: 300401,
+    cls: 'туя',
+    name: 'шаровидна "Danica" (4-х річна)',
     price: 10,
     height: '50-100',
     maturation: '-',
@@ -66,7 +110,7 @@ export const decorative: Item[] = [
     id: 3005,
     cls: 'тамарикс',
     name: 'Тамарикс',
-    price: 10,
+    price: 100,
     height: '50-150',
     maturation: '-',
     details:
@@ -77,7 +121,7 @@ export const decorative: Item[] = [
     id: 3006,
     cls: 'слива декоративна',
     name: 'Пісарді',
-    price: 10,
+    price: 200,
     height: '300-400',
     maturation: '-',
     details:
@@ -89,7 +133,7 @@ export const decorative: Item[] = [
     id: 3007,
     cls: 'полин',
     name: 'Полин Лимонний',
-    price: 10,
+    price: 100,
     height: '50-100',
     maturation: '-',
     details:
@@ -101,7 +145,7 @@ export const decorative: Item[] = [
     id: 3008,
     cls: 'шавлія',
     name: 'Шавлія лікарська',
-    price: 10,
+    price: 50,
     height: '50-80',
     maturation: '-',
     details:
@@ -113,7 +157,7 @@ export const decorative: Item[] = [
     id: 3009,
     cls: 'морозник',
     name: 'Морозник',
-    price: 10,
+    price: 100,
     height: '30-60',
     maturation: '-',
     details:
@@ -125,7 +169,7 @@ export const decorative: Item[] = [
     id: 3010,
     cls: 'сантоліна',
     name: 'Сантоліна кипарисоподібна',
-    price: 10,
+    price: 50,
     height: '50-80',
     maturation: '-',
     details:
@@ -137,7 +181,7 @@ export const decorative: Item[] = [
     id: 3011,
     cls: 'бобовник',
     name: 'Бобовник',
-    price: 10,
+    price: 100,
     height: '400-600',
     maturation: '-',
     details:
@@ -149,7 +193,7 @@ export const decorative: Item[] = [
     id: 3012,
     cls: 'барбарис',
     name: 'Барбарис Тунберга',
-    price: 10,
+    price: 50,
     height: '100-300',
     maturation: '-',
     details:
@@ -161,7 +205,7 @@ export const decorative: Item[] = [
     id: 3013,
     cls: 'спірея',
     name: 'спірея Бумальда',
-    price: 10,
+    price: 50,
     height: '60-80',
     maturation: '-',
     details:
@@ -173,7 +217,7 @@ export const decorative: Item[] = [
     id: 3014,
     cls: 'спірея',
     name: 'Спірея Вангутта',
-    price: 10,
+    price: 50,
     height: '150-200',
     maturation: '-',
     details:
@@ -185,7 +229,7 @@ export const decorative: Item[] = [
     id: 3015,
     cls: 'спірея',
     name: 'Спірея Колосовидна',
-    price: 10,
+    price: 50,
     height: '150-250',
     maturation: '-',
     details:
@@ -197,7 +241,7 @@ export const decorative: Item[] = [
     id: 3016,
     cls: 'розмарин',
     name: 'Розмарин',
-    price: 10,
+    price: 50,
     height: '30-70',
     maturation: '-',
     details:
@@ -209,7 +253,7 @@ export const decorative: Item[] = [
     id: 3017,
     cls: 'юкка',
     name: 'Юкка',
-    price: 10,
+    price: 50,
     height: '80-150',
     maturation: '-',
     details:
@@ -221,7 +265,7 @@ export const decorative: Item[] = [
     id: 3018,
     cls: 'ялівець',
     name: 'Ялівець повзучий',
-    price: 10,
+    price: 200,
     height: '30',
     maturation: '-',
     details:

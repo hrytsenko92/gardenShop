@@ -31,7 +31,7 @@ export const berries: Item[] = [
     id: 2001,
     cls: 'смородина',
     name: 'Краса Львова',
-    price: 10,
+    price: 40,
     height: '100',
     maturation: '-',
     details:
@@ -42,7 +42,7 @@ export const berries: Item[] = [
     id: 2002,
     cls: 'смородина',
     name: 'Ювілейна Копаня',
-    price: 10,
+    price: 40,
     height: '50 - 100',
     maturation: '-',
     details:
@@ -53,7 +53,7 @@ export const berries: Item[] = [
     id: 2003,
     cls: 'смородина',
     name: 'Рубен',
-    price: 10,
+    price: 40,
     height: '50 - 170',
     maturation: '-',
     details:
@@ -64,7 +64,7 @@ export const berries: Item[] = [
     id: 2004,
     cls: 'смородина',
     name: 'Орест',
-    price: 10,
+    price: 40,
     height: '150 - 170',
     maturation: '-',
     details:
@@ -76,7 +76,7 @@ export const berries: Item[] = [
     id: 2005,
     cls: 'смородина',
     name: 'Гоферт',
-    price: 10,
+    price: 40,
     height: '100 - 150',
     maturation: '-',
     details:
@@ -88,7 +88,7 @@ export const berries: Item[] = [
     id: 2006,
     cls: 'смородина',
     name: 'Бертрон',
-    price: 10,
+    price: 40,
     height: '150 - 200',
     maturation: '-',
     details:
@@ -100,7 +100,7 @@ export const berries: Item[] = [
     id: 2007,
     cls: 'смородина',
     name: 'Джонкер Ван Тетс',
-    price: 10,
+    price: 40,
     height: '150 - 170',
     maturation: '-',
     details:
@@ -112,7 +112,7 @@ export const berries: Item[] = [
     id: 2008,
     cls: 'смородина',
     name: 'Ровада',
-    price: 10,
+    price: 40,
     height: '100 - 170',
     maturation: '-',
     details:
@@ -124,7 +124,7 @@ export const berries: Item[] = [
     id: 2009,
     cls: 'смородина',
     name: 'Софіївська',
-    price: 10,
+    price: 40,
     height: '50 - 120',
     maturation: '-',
     details:
@@ -136,7 +136,7 @@ export const berries: Item[] = [
     id: 2010,
     cls: 'смородина',
     name: 'Білоруська (рання)',
-    price: 10,
+    price: 40,
     height: '110 - 150',
     maturation: '-',
     details:
@@ -148,7 +148,7 @@ export const berries: Item[] = [
     id: 2011,
     cls: 'смородина',
     name: 'Чорний принц',
-    price: 10,
+    price: 40,
     height: '100 - 170',
     maturation: '-',
     details:
@@ -160,7 +160,7 @@ export const berries: Item[] = [
     id: 2012,
     cls: 'смородина',
     name: 'Вернісаж',
-    price: 10,
+    price: 40,
     height: '70 - 160',
     maturation: '-',
     details:
@@ -172,7 +172,7 @@ export const berries: Item[] = [
     id: 2013,
     cls: 'смородина',
     name: 'Червона "Ярославна"',
-    price: 10,
+    price: 40,
     height: '100 - 150',
     maturation: '-',
     details:
@@ -184,7 +184,7 @@ export const berries: Item[] = [
     id: 2014,
     cls: 'смородина',
     name: 'Козацька',
-    price: 10,
+    price: 40,
     height: '80 - 170',
     maturation: '-',
     details:
@@ -196,7 +196,7 @@ export const berries: Item[] = [
     id: 2015,
     cls: 'смородина',
     name: 'Рондом',
-    price: 10,
+    price: 40,
     height: '100 - 150',
     maturation: '-',
     details:
@@ -208,7 +208,7 @@ export const berries: Item[] = [
     id: 2016,
     cls: 'малина',
     name: 'Глен Емпл',
-    price: 10,
+    price: 20,
     height: '30 - 40',
     maturation: '-',
     details:
@@ -220,7 +220,7 @@ export const berries: Item[] = [
     id: 2017,
     cls: 'малина',
     name: 'Полка',
-    price: 10,
+    price: 20,
     height: '100 - 200',
     maturation: '-',
     details:
@@ -232,7 +232,7 @@ export const berries: Item[] = [
     id: 2018,
     cls: 'малина',
     name: 'Кріпиш (малинове дерево)',
-    price: 10,
+    price: 20,
     height: '150 - 170',
     maturation: '-',
     details:
@@ -244,7 +244,7 @@ export const berries: Item[] = [
     id: 2019,
     cls: 'малина',
     name: 'Жовтий гігант',
-    price: 10,
+    price: 20,
     height: '100 - 300',
     maturation: '-',
     details:
@@ -256,7 +256,7 @@ export const berries: Item[] = [
     id: 2020,
     cls: 'малина',
     name: 'Хімбо Топ',
-    price: 10,
+    price: 20,
     height: '100 - 180',
     maturation: '-',
     details:
@@ -268,7 +268,7 @@ export const berries: Item[] = [
     id: 2021,
     cls: 'агрус',
     name: 'Російський жовтий',
-    price: 10,
+    price: 50,
     height: '100 - 140',
     maturation: '-',
     details:
@@ -280,7 +280,7 @@ export const berries: Item[] = [
     id: 2022,
     cls: 'агрус',
     name: 'Колобок',
-    price: 10,
+    price: 50,
     height: '100 - 150',
     maturation: '-',
     details:
@@ -292,7 +292,7 @@ export const berries: Item[] = [
     id: 2023,
     cls: 'агрус',
     name: 'Неслуховський',
-    price: 10,
+    price: 50,
     height: '100 - 150',
     maturation: '-',
     details:
@@ -304,7 +304,7 @@ export const berries: Item[] = [
     id: 2024,
     cls: 'агрус',
     name: ' Англійський жовтий',
-    price: 10,
+    price: 50,
     height: '120 - 180',
     maturation: '-',
     details:
@@ -316,7 +316,7 @@ export const berries: Item[] = [
     id: 2025,
     cls: 'агрус',
     name: 'безколючковий "Мюнхгаузен"',
-    price: 10,
+    price: 100,
     height: '110 - 160',
     maturation: '-',
     details:
@@ -328,7 +328,7 @@ export const berries: Item[] = [
     id: 2026,
     cls: 'жимолость',
     name: 'Жимолость "Caprifol"',
-    price: 10,
+    price: 100,
     height: '50-150',
     maturation: '-',
     details:
@@ -340,7 +340,7 @@ export const berries: Item[] = [
     id: 2027,
     cls: 'барбарис',
     name: 'барбарис плодовий',
-    price: 10,
+    price: 100,
     height: '100-200',
     maturation: '-',
     details:

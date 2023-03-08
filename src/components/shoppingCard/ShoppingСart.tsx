@@ -236,24 +236,18 @@ const ShoppingCart: React.FC = () => {
     orderstr,
   };
   const sendEmail = (e: React.SyntheticEvent) => {
+    console.log('eee');
     e.preventDefault();
     userData.name.length > 3 && userData.phone.length === 11 && userData.adress.length > 7
-      ? emailjs
-          .send(
-            String(process.env.SERVICE_ID),
-            String(process.env.TEMPLATE_ID),
-            userData,
-            String(process.env.PUBLIC_KEY),
-          )
-          .then(
-            function (response) {
-              handleRemoveAll();
-              console.log('SUCCESS!', response.status, response.text);
-            },
-            function (error) {
-              console.log('FAILED...', error);
-            },
-          )
+      ? emailjs.send('service_8yynih2', 'template_ng2ge9d', userData, '9vqAefbQXmssUIs5o').then(
+          function (response) {
+            handleRemoveAll();
+            console.log('SUCCESS!', response.status, response.text);
+          },
+          function (error) {
+            console.log('FAILED...', error);
+          },
+        )
       : null;
   };
 

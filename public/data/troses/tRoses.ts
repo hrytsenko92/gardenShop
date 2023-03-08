@@ -24,7 +24,7 @@ export const roses: Item[] = [
     id: 4001,
     cls: 'троянда',
     name: 'Троянда чайно-гібридна Амалія',
-    price: 10,
+    price: 50,
     height: '80-90',
     maturation: '-',
     details:
@@ -36,7 +36,7 @@ export const roses: Item[] = [
     id: 4002,
     cls: 'троянда',
     name: 'Штамбова',
-    price: 10,
+    price: 50,
     height: '80-150',
     maturation: 'повторний, починаючи з червня до середини осені',
     details:
@@ -48,7 +48,7 @@ export const roses: Item[] = [
     id: 4003,
     cls: 'троянда',
     name: 'Блек Меджик',
-    price: 10,
+    price: 50,
     height: '50-100',
     maturation: 'липень-вересень',
     details:
@@ -60,7 +60,7 @@ export const roses: Item[] = [
     id: 4004,
     cls: 'троянда',
     name: 'Керіо',
-    price: 10,
+    price: 50,
     height: '100-120',
     maturation: 'червень-жовтень',
     details:
@@ -72,7 +72,7 @@ export const roses: Item[] = [
     id: 4005,
     cls: 'троянда',
     name: 'Керіо',
-    price: 10,
+    price: 50,
     height: '100-120',
     maturation: 'червень-до приморозків',
     details:
@@ -84,7 +84,7 @@ export const roses: Item[] = [
     id: 4006,
     cls: 'троянда',
     name: 'Ред Інтуішн',
-    price: 10,
+    price: 50,
     height: '100-120',
     maturation: 'червень-жовтень',
     details:
@@ -96,7 +96,7 @@ export const roses: Item[] = [
     id: 4007,
     cls: 'троянда',
     name: 'Абракадабра',
-    price: 10,
+    price: 50,
     height: '100-120',
     maturation: 'червень-до приморозків',
     details:
@@ -108,7 +108,7 @@ export const roses: Item[] = [
     id: 4008,
     cls: 'троянда',
     name: 'Імператриця Фарах',
-    price: 10,
+    price: 50,
     height: '100-200',
     maturation: 'червень-жовтень',
     details:
@@ -120,7 +120,7 @@ export const roses: Item[] = [
     id: 4009,
     cls: 'троянда',
     name: 'Ксюша',
-    price: 10,
+    price: 50,
     height: '80-100',
     maturation: 'червень-жовтень',
     details:
@@ -132,7 +132,7 @@ export const roses: Item[] = [
     id: 4010,
     cls: 'троянда',
     name: 'Сонечко',
-    price: 10,
+    price: 50,
     height: '80-150',
     maturation: 'червень-до приморозків',
     details:
@@ -144,7 +144,7 @@ export const roses: Item[] = [
     id: 4011,
     cls: 'троянда',
     name: 'Блакитний Ніл',
-    price: 10,
+    price: 50,
     height: '100-150',
     maturation: 'червень-жовтень',
     details:
@@ -156,7 +156,7 @@ export const roses: Item[] = [
     id: 4012,
     cls: 'троянда',
     name: 'Блакитний Ніл',
-    price: 10,
+    price: 50,
     height: '100-150',
     maturation: 'червень-жовтень',
     details:
@@ -168,7 +168,7 @@ export const roses: Item[] = [
     id: 4013,
     cls: 'троянда',
     name: 'Нью Фешн',
-    price: 10,
+    price: 50,
     height: '50-140',
     maturation: 'червень-жовтень',
     details:
@@ -180,7 +180,7 @@ export const roses: Item[] = [
     id: 4014,
     cls: 'троянда',
     name: 'Ніколь',
-    price: 10,
+    price: 50,
     height: '50-100',
     maturation: 'червень-жовтень',
     details:
@@ -192,7 +192,7 @@ export const roses: Item[] = [
     id: 4015,
     cls: 'троянда',
     name: 'Анастасія',
-    price: 10,
+    price: 50,
     height: '50-120',
     maturation: 'червень-жовтень',
     details:
@@ -204,7 +204,7 @@ export const roses: Item[] = [
     id: 4016,
     cls: 'троянда',
     name: 'Джоріанда',
-    price: 10,
+    price: 50,
     height: '60-150',
     maturation: 'червень-жовтень',
     details:
@@ -216,7 +216,7 @@ export const roses: Item[] = [
     id: 4017,
     cls: 'троянда',
     name: 'Ель Торо',
-    price: 10,
+    price: 50,
     height: '50-80',
     maturation: 'червень-жовтень',
     details:
@@ -228,7 +228,7 @@ export const roses: Item[] = [
     id: 4018,
     cls: 'троянда',
     name: 'Софі Лорен',
-    price: 10,
+    price: 50,
     height: '50-80',
     maturation: 'червень-жовтень',
     details:
@@ -240,7 +240,7 @@ export const roses: Item[] = [
     id: 4019,
     cls: 'троянда',
     name: 'Чорна Магія',
-    price: 10,
+    price: 50,
     height: '100-200',
     maturation: 'липень-вересень',
     details:
@@ -252,7 +252,7 @@ export const roses: Item[] = [
     id: 4020,
     cls: 'троянда',
     name: 'Піч Аваланш',
-    price: 10,
+    price: 50,
     height: '50-80',
     maturation: 'липень-вересень',
     details:

@@ -15,13 +15,13 @@ const Container = styled.div`
 const ButtonsWrapper = styled.div`
   grid-column: 1/2;
   grid-row: 1/2;
-  width: 100%;
   height: 100%;
   display: grid;
   justify-items: center;
   align-items: center;
   gap: 15px;
   @media ${device.mobileS} {
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
@@ -30,10 +30,12 @@ const ButtonsWrapper = styled.div`
     grid-template-rows: auto;
   }
   @media ${device.tabletS} {
+    width: 95%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
   @media ${device.tabletM} {
+    width: 85%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
   }

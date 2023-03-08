@@ -279,10 +279,10 @@ const CardItem: React.FC<DataInfo> = ({ tData }) => {
     event.preventDefault();
     dispatch(
       add({
-        itemId: Number(new Date()),
+        itemId: tData.id,
         itemTotal: Number(count),
-        itemName: 'слива',
-        itemPrice: 111,
+        itemName: tData.name,
+        itemPrice: tData.price,
       }),
     );
     setCount(5);
@@ -379,7 +379,9 @@ const CardItem: React.FC<DataInfo> = ({ tData }) => {
         <Contents>
           <ItemDetail>
             <ItemDetailHeight>Висота: {tData.height} см</ItemDetailHeight>
-            <ItemDetailMaturation>Період цвітіння: {tData.maturation}</ItemDetailMaturation>
+            <ItemDetailMaturation>
+              {tData.maturation !== '-' ? `Період цвітіння: ${tData.maturation}` : null}{' '}
+            </ItemDetailMaturation>
             <ItemDetailInfo>{tData.details}</ItemDetailInfo>
           </ItemDetail>
         </Contents>
