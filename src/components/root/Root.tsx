@@ -1,6 +1,7 @@
 import React, { useEffect, useState, createRef } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useAppSelector } from '../../../store/hook';
+import Carousel from './Carousel';
 import styled from 'styled-components';
 import { device } from '../../../assets/device';
 import background from '../../../assets/s1.jpg';
@@ -20,6 +21,7 @@ const Header = styled('header')`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -131,19 +133,16 @@ const Title = styled('h1')`
   letter-spacing: 2px;
   margin: 0px 15px;
 `;
-const SubTitle = styled('h4')`
+const TitleSlider = styled.div`
   grid-column: 1/2;
   grid-row: 3/4;
   margin: 0 auto;
   padding-bottom: 25px;
   color: ${colorsPalette.color7};
-  width: 90%;
+  width: 100%;
   @media ${device.tabletS} {
     width: 75%;
   }
-  text-align: center;
-  font-size: 16px;
-  font-weight: 300;
 `;
 const Main = styled('main')``;
 
@@ -187,6 +186,12 @@ const Root = () => {
           });
     };
   }, [window.scrollY]);
+  const slides = [
+    'Відправка товару 2 рази на тиждень Новою Поштою',
+    'Широкий вибір саджанців для Вашого саду',
+    'Мінімальна сума замовлення 200 грн',
+    'Додатково знижка в разі оптових замовлень',
+  ];
   return (
     <Container>
       <Menu ref={refMenu} style={scrollStyle.bg}>
@@ -271,10 +276,10 @@ const Root = () => {
       </Menu>
       <Header ref={refHeader}>
         <Title>Зробіть свій сад кращим разом з Екосад</Title>
-        <SubTitle>
-          Ми пропонуємо широкий вибір саджанців дерев та кущів високої якості. При оптових
-          замовленнях діє додаткова знижка. Мінімальна сума замовлення на сайті - 200грн.
-        </SubTitle>
+        <TitleSlider>
+          <Carousel slides={slides} />
+        </TitleSlider>
+        ;
       </Header>
       <Main>
         <Outlet />

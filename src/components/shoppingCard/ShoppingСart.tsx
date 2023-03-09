@@ -58,10 +58,10 @@ const ItemsContainer = styled.div`
 `;
 const Item = styled.div`
   width: 100%;
-  height: 50px;
+  height: 75px;
   padding: 0px 10px;
   display: grid;
-  grid-template-columns: 1.5fr 2fr 1.5fr 0.5fr;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr 0.5fr;
   grid-template-rows: 1fr;
   justify-content: center;
   justify-items: start;
@@ -72,6 +72,7 @@ const Item = styled.div`
 `;
 const ItemName = styled.div`
   font-size: 16px;
+  padding-left: 5px;
 `;
 const ItemSum = styled.div`
   font-size: 13px;
@@ -188,7 +189,10 @@ const BoxSubmit = styled.div`
   padding: 20px 0px;
   font-size: 13px;
 `;
-const Price = styled.div``;
+const Price = styled.div`
+  color: ${colorsPalette.color1};
+  font-size: 18px;
+`;
 const Submit = styled.input`
   width: 120px;
   height: 35px;
@@ -292,8 +296,8 @@ const ShoppingCart: React.FC = () => {
                   }}
                 >
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="9" stroke="red" strokeWidth="2" />
-                    <path d="M7.5 12H16.5" stroke="red" strokeWidth="2" />
+                    <circle cx="12" cy="12" r="9" stroke="#d27685" strokeWidth="2" />
+                    <path d="M7.5 12H16.5" stroke="#d27685" strokeWidth="2" />
                   </svg>
                 </ItemRemoveBtn>
               </ItemRemove>
@@ -307,7 +311,7 @@ const ShoppingCart: React.FC = () => {
         ) : (
           <BoxForm onSubmit={sendEmail}>
             <BoxName>
-              <BoxLabel>{"Ім'я:"}</BoxLabel>
+              <BoxLabel>{'Ім\'я:'}</BoxLabel>
               <BoxInput type="text" value={name} onChange={changeName} />
             </BoxName>
             <BoxPhone>

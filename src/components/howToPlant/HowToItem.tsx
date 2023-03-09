@@ -43,10 +43,22 @@ const Article = styled.div`
   padding: 15px;
   color: ${colorsPalette.color1};
 `;
-const Season = styled.div``;
-const PlaceSoil = styled.div``;
-const Technique = styled.div``;
-const Fertilizers = styled.div``;
+const Season = styled.div`
+  font-size: 18px;
+  margin: 10px 0px;
+`;
+const PlaceSoil = styled.div`
+  font-size: 18px;
+  margin: 10px 0px;
+`;
+const Technique = styled.div`
+  font-size: 18px;
+  margin: 10px 0px;
+`;
+const Fertilizers = styled.div`
+  font-size: 18px;
+  margin: 10px 0px;
+`;
 const HowToItem: React.FC<DataInfo> = ({ data }) => {
   return (
     <>

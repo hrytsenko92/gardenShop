@@ -2,8 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-// const CopyWebpackPlugin = require("copy-webpack-plugin");
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -35,16 +35,12 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        use: ['miniCssExtractPlugin.loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/,
-        use: ['miniCssExtractPlugin.loader', 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
-      // {
-      //     test: /\.(jpe?g|png|gif|mp3|svg)$/,
-      //     use: ["file-loader"],
-      // },
       {
         test: /\.(png|jpe?g|gif|jp2|webp)$/,
         loader: 'file-loader',
@@ -70,14 +66,14 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new Dotenv(),
-    new miniCssExtractPlugin({
+    new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
     // new CopyWebpackPlugin([
-    //     {
-    //         from: path.resolve(__dirname, "src/.."),
-    //         to: path.resolve(__dirname, "build")
-    //     }
-    // ])
+    //   {
+    //     from: path.resolve(__dirname, 'src/..'),
+    //     to: path.resolve(__dirname, 'build'),
+    //   },
+    // ]),
   ],
 };
