@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
+import { AsYouType } from 'libphonenumber-js';
 import { remove, removeAll, itemType } from '../../../store/orderSlice';
 import { useAppSelector, useAppDispatch } from '../../../store/hook';
 import { device } from '../../../assets/device';
@@ -201,22 +202,22 @@ const ShoppingCart: React.FC = () => {
   const orderList = useAppSelector((state) => state.orderList.value);
   const dispatch = useAppDispatch();
   const [name, setName] = useState<string>('');
-  const [phone, setPhone] = useState('+380');
+  const [phone, setPhone] = useState('');
   const [adress, setAdress] = useState<string>('');
   const [totalSum, setTotalSum] = useState<string>('');
   const [orderstr, setOrderstr] = useState<string>('');
 
-  const changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const letters = /^[A-Za-zА-ЯҐЄІЇа-яґєії]+$/;
-    e.target.value.match(letters) ? setName(e.target.value) : setName('');
+  const changeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputName = event.target.value;
+    const ukrainianPattern = /^[А-ЯҐЄІЇа-яґєії\s]*$/;
+    if (ukrainianPattern.test(inputName)) {
+      setName(inputName);
+    }
   };
-  const changePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const phoneNumber = e.target.value;
-    phoneNumber.match('[0-9]') && phoneNumber.length >= 4 && phoneNumber.length <= 13
-      ? setPhone(e.target.value)
-      : '+380';
+  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputPhone = event.target.value;
+    const formattedPhone = new AsYouType().input(inputPhone);
+    setPhone(formattedPhone);
   };
   const changeAdress = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     e.preventDefault();
@@ -238,7 +239,7 @@ const ShoppingCart: React.FC = () => {
   const sendEmail = (e: React.SyntheticEvent) => {
     console.log('eee');
     e.preventDefault();
-    userData.name.length > 3 && userData.phone.length === 11 && userData.adress.length > 7
+    userData.name.length > 3 && userData.phone.length === 12 && userData.adress.length > 7
       ? emailjs.send('service_8yynih2', 'template_ng2ge9d', userData, '9vqAefbQXmssUIs5o').then(
           function (response) {
             handleRemoveAll();
@@ -311,7 +312,14 @@ const ShoppingCart: React.FC = () => {
             </BoxName>
             <BoxPhone>
               <BoxLabel>Номер телефону:</BoxLabel>
-              <BoxInput type="tel" value={phone} onChange={changePhone} />
+              <BoxInput
+                type="tel"
+                value={phone}
+                onChange={handlePhoneChange}
+                maxLength={12}
+                minLength={12}
+                placeholder="380 XX XXX XX XX"
+              />
             </BoxPhone>
             <BoxTextArea>
               <BoxLabel>Адреса доставки:</BoxLabel>
