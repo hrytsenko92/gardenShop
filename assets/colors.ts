@@ -6,6 +6,7 @@ export const colorsPalette = {
   color5: '#c5edac',
   color6: '#e0e2db',
   color7: '#fffffa',
+  color8: '#FFC26B',
   baseWhite: '#ffffff',
   cardBG: '#f1f1f1',
 };

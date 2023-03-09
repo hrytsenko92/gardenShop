@@ -125,7 +125,7 @@ const Title = styled('h1')`
   grid-column: 1/2;
   grid-row: 2/3;
   text-align: center;
-  color: ${colorsPalette.color7};
+  color: ${colorsPalette.color2};
   font-size: 25px;
   @media ${device.tabletS} {
     font-size: 35px;
@@ -275,7 +275,7 @@ const Root = () => {
         </Nav>
       </Menu>
       <Header ref={refHeader}>
-        <Title>Зробіть свій сад кращим разом з Екосад</Title>
+        <Title>Розквітай разом із Весняним садом!</Title>
         <TitleSlider>
           <Carousel slides={slides} />
         </TitleSlider>

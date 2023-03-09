@@ -9,6 +9,8 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
+  justify-content: center;
+  width: 100%;
   gap: 25px;
   padding: 25px;
 `;
@@ -17,6 +19,7 @@ const ButtonsWrapper = styled.div`
   grid-row: 1/2;
   height: 100%;
   display: grid;
+  margin: 0 auto;
   justify-items: center;
   align-items: center;
   gap: 15px;
