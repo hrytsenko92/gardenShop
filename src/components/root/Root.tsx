@@ -148,6 +148,45 @@ const Main = styled('main')``;
 
 const Root = () => {
   const orderList = useAppSelector((state) => state.orderList.value);
+  // const [scrollStyle, setScrollStyle] = useState({
+  //   bg: {
+  //     background: 'rgba(255, 255, 255, 0.08)',
+  //     boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  //     backdropFilter: 'blur(6.5px)',
+  //     WebkitBackdropFilter: 'blur(6.5px)',
+  //     transition: 'all 0.3s ease-in 0s',
+  //   },
+  // });
+  // const refHeader = createRef<HTMLDivElement>();
+  // const refMenu = createRef<HTMLDivElement>();
+  // useEffect(() => {
+  //   window.onscroll = function () {
+  //     refHeader.current &&
+  //     refMenu.current &&
+  //     window.scrollY >=
+  //       refHeader.current.getBoundingClientRect().height -
+  //         refMenu.current.getBoundingClientRect().height
+  //       ? setScrollStyle({
+  //           bg: {
+  //             background: '#fffffa',
+  //             boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  //             backdropFilter: 'blur(6.5px)',
+  //             WebkitBackdropFilter: 'blur(6.5px)',
+  //             transition: 'all 0.2s ease-in 0s',
+  //           },
+  //         })
+  //       : setScrollStyle({
+  //           bg: {
+  //             background: 'rgba(255, 255, 255, 0.28)',
+  //             boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  //             backdropFilter: 'blur(6.5px)',
+  //             WebkitBackdropFilter: 'blur(6.5px)',
+  //             transition: 'all 0.1s ease-in 0s',
+  //           },
+  //         });
+  //   };
+  // }, [window.scrollY]);
+
   const [scrollStyle, setScrollStyle] = useState({
     bg: {
       background: 'rgba(255, 255, 255, 0.08)',
@@ -159,33 +198,45 @@ const Root = () => {
   });
   const refHeader = createRef<HTMLDivElement>();
   const refMenu = createRef<HTMLDivElement>();
+
   useEffect(() => {
-    window.onscroll = function () {
-      refHeader.current &&
-      refMenu.current &&
-      window.scrollY >=
-        refHeader.current.getBoundingClientRect().height -
-          refMenu.current.getBoundingClientRect().height
-        ? setScrollStyle({
-            bg: {
-              background: '#fffffa',
-              boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-              backdropFilter: 'blur(6.5px)',
-              WebkitBackdropFilter: 'blur(6.5px)',
-              transition: 'all 0.2s ease-in 0s',
-            },
-          })
-        : setScrollStyle({
-            bg: {
-              background: 'rgba(255, 255, 255, 0.28)',
-              boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-              backdropFilter: 'blur(6.5px)',
-              WebkitBackdropFilter: 'blur(6.5px)',
-              transition: 'all 0.1s ease-in 0s',
-            },
-          });
+    function handleScroll() {
+      if (
+        refHeader.current &&
+        refMenu.current &&
+        window.scrollY >=
+          refHeader.current.getBoundingClientRect().height -
+            refMenu.current.getBoundingClientRect().height
+      ) {
+        setScrollStyle({
+          bg: {
+            background: '#fffffa',
+            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(6.5px)',
+            WebkitBackdropFilter: 'blur(6.5px)',
+            transition: 'all 0.2s ease-in 0s',
+          },
+        });
+      } else {
+        setScrollStyle({
+          bg: {
+            background: 'rgba(255, 255, 255, 0.28)',
+            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(6.5px)',
+            WebkitBackdropFilter: 'blur(6.5px)',
+            transition: 'all 0.1s ease-in 0s',
+          },
+        });
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [window.scrollY]);
+  }, [refHeader, refMenu]);
+
   const slides = [
     'Відправка товару 2 рази на тиждень Новою Поштою',
     'Широкий вибір саджанців для Вашого саду',
