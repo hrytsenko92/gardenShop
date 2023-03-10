@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colorsPalette } from '../../../../assets/colors';
 
 const Container = styled.div`
   display: flex;

@@ -269,7 +269,9 @@ const Root = () => {
     <Container>
       <Menu ref={refMenu} style={scrollStyle.bg}>
         <Logotype>
-          <Logo />
+          <NavLink to="/">
+            <Logo />
+          </NavLink>
         </Logotype>
         <NavMobile>
           <Burger open={open} onClick={() => setOpen(!open)}>

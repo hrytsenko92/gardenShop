@@ -10,6 +10,7 @@ type DataInfo = {
 };
 const Container = styled.div``;
 const Top = styled.div``;
+const ItemDescriprion = styled.div``;
 const Bottom = styled.div``;
 const Left = styled.div``;
 const Details1 = styled.div``;
@@ -55,6 +56,22 @@ const Wrapper = styled.div`
       -moz-background-size: 100%;
       -o-background-size: 100%;
       background-size: 100%;
+      position: relative;
+      ${ItemDescriprion} {
+        position: absolute;
+        bottom: 5px;
+        left: 50px;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        font-size: 22px;
+        color: ${colorsPalette.color7};
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 7px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.1px);
+        -webkit-backdrop-filter: blur(7.1px);
+      }
     }
     ${Bottom} {
       width: 200%;
@@ -305,7 +322,9 @@ const CardItem: React.FC<DataInfo> = ({ tData }) => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
           }}
-        />
+        >
+          <ItemDescriprion>{tData.cls}</ItemDescriprion>
+        </Top>
         <Bottom className={isActive ? 'clicked' : ''}>
           <Left>
             <Details1>
