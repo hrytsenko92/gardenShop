@@ -36,7 +36,7 @@ export const roses: Item[] = [
     id: 4002,
     cls: 'троянда',
     name: 'Штамбова',
-    price: 50,
+    price: 500,
     height: '80-150',
     maturation: 'повторний, починаючи з червня до середини осені',
     details:
