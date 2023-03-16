@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Popup from './Popup';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 import { AsYouType } from 'libphonenumber-js';
@@ -203,6 +204,7 @@ const Submit = styled.input`
 `;
 
 const ShoppingCart: React.FC = () => {
+  const [showPopup, setShowPopup] = useState(false);
   const orderList = useAppSelector((state) => state.orderList.value);
   const dispatch = useAppDispatch();
   const [name, setName] = useState<string>('');
@@ -210,7 +212,12 @@ const ShoppingCart: React.FC = () => {
   const [adress, setAdress] = useState<string>('');
   const [totalSum, setTotalSum] = useState<string>('');
   const [orderstr, setOrderstr] = useState<string>('');
-
+  const handleShowPopup = () => {
+    setShowPopup(true);
+  };
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
   const changeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     const inputName = event.target.value;
     const ukrainianPattern = /^[А-ЯҐЄІЇа-яґєії\s]*$/;
@@ -241,12 +248,12 @@ const ShoppingCart: React.FC = () => {
     orderstr,
   };
   const sendEmail = (e: React.SyntheticEvent) => {
-    console.log('eee');
     e.preventDefault();
     userData.name.length > 3 && userData.phone.length === 12 && userData.adress.length > 7
       ? emailjs.send('service_8yynih2', 'template_ng2ge9d', userData, '9vqAefbQXmssUIs5o').then(
           function (response) {
             handleRemoveAll();
+            handleShowPopup();
             console.log('SUCCESS!', response.status, response.text);
           },
           function (error) {
@@ -282,6 +289,13 @@ const ShoppingCart: React.FC = () => {
 
   return (
     <Container>
+      {showPopup && (
+        <Popup
+          title="Дякуємо за замовлення!"
+          text={`${name}, очікуйте дзвінка для уточнення деталей замовлення. Якщо у Вас виникли запитання телефонуйте за номером: +38-098-603-08-08`}
+          onClose={handleClosePopup}
+        />
+      )}
       <CardWrapper>
         <ItemsContainer>
           {orderList.map((i) => (
@@ -311,7 +325,7 @@ const ShoppingCart: React.FC = () => {
         ) : (
           <BoxForm onSubmit={sendEmail}>
             <BoxName>
-              <BoxLabel>{'Ім\'я:'}</BoxLabel>
+              <BoxLabel>{"Ім'я:"}</BoxLabel>
               <BoxInput type="text" value={name} onChange={changeName} />
             </BoxName>
             <BoxPhone>
