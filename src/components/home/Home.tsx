@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import CardItem from '@app/components/card/CardItem';
-import { allData } from '../../../public/data/allData';
+import { AllItems, Item, allData } from '../../../public/data/allData';
 import { device } from '../../../assets/device';
 import { colorsPalette } from '../../../assets/colors';
 
 const Container = styled.section`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+`;
+const NoFiltered = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -28,6 +34,24 @@ const Section = styled.section`
   }
   @media ${device.laptop} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+`;
+const Input = styled.input`
+  margin: 25px;
+  width: 300px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  color: #333;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${colorsPalette.color1};
+    text-align: center;
+  }
+  &::placeholder {
+    text-align: center;
   }
 `;
 const ButtonWrapper = styled.div`
@@ -65,6 +89,16 @@ const Home: React.FC = () => {
   const [berries, setBerries] = useState(true);
   const [fruitful, setFruitful] = useState(true);
   const [decorativeBushes, setDecorativeBushes] = useState(true);
+  const [searchText, setSearchText] = useState('');
+  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value);
+    const searchRegex = new RegExp(e.target.value, 'i');
+    const items = Object.values(allData).flat();
+    const filteredItems = items.filter((item) => searchRegex.test(item.name));
+    setFilteredItems(filteredItems);
+  };
 
   const selectAll = () => {
     setAll(true), setRoses(true), setBerries(true), setFruitful(true), setDecorativeBushes(true);
@@ -103,60 +137,67 @@ const Home: React.FC = () => {
   };
   return (
     <Container>
-      <ButtonWrapper>
-        <ButtonSelect
-          style={all ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectAll}
-        >
-          Всі види
-        </ButtonSelect>
-        <ButtonSelect
-          style={roses ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectRoses}
-        >
-          Троянди
-        </ButtonSelect>
-        <ButtonSelect
-          style={berries ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectBerries}
-        >
-          Ягідні культури
-        </ButtonSelect>
-        <ButtonSelect
-          style={fruitful ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectFruitful}
-        >
-          Плодові дерева
-        </ButtonSelect>
-        <ButtonSelect
-          style={decorativeBushes ? buttonStyle : { backgroundColor: 'transparent' }}
-          onClick={selectDecorativeBushes}
-        >
-          Декоративні
-        </ButtonSelect>
-      </ButtonWrapper>
-      <Section>
-        {roses && allData.roses
-          ? allData.roses.map((i) => {
-              return <CardItem key={i.id} tData={i} />;
-            })
-          : null}
-        {berries && allData.berries
-          ? allData.berries.map((i) => {
-              return <CardItem key={i.id} tData={i} />;
-            })
-          : null}
-        {fruitful && allData.fruitful
-          ? allData.fruitful.map((i) => {
-              return <CardItem key={i.id} tData={i} />;
-            })
-          : null}
-        {decorativeBushes && allData.decorative
-          ? allData.decorative.map((i) => {
-              return <CardItem key={i.id} tData={i} />;
-            })
-          : null}
-      </Section>
+      <Input type="text" placeholder="Пошук" value={searchText} onChange={handleSearch} />
+      {searchText.length === 0 ? (
+        <NoFiltered>
+          <ButtonWrapper>
+            <ButtonSelect
+              style={all ? buttonStyle : { backgroundColor: 'transparent' }}
+              onClick={selectAll}
+            >
+              Всі види
+            </ButtonSelect>
+            <ButtonSelect
+              style={roses ? buttonStyle : { backgroundColor: 'transparent' }}
+              onClick={selectRoses}
+            >
+              Троянди
+            </ButtonSelect>
+            <ButtonSelect
+              style={berries ? buttonStyle : { backgroundColor: 'transparent' }}
+              onClick={selectBerries}
+            >
+              Ягідні культури
+            </ButtonSelect>
+            <ButtonSelect
+              style={fruitful ? buttonStyle : { backgroundColor: 'transparent' }}
+              onClick={selectFruitful}
+            >
+              Плодові дерева
+            </ButtonSelect>
+            <ButtonSelect
+              style={decorativeBushes ? buttonStyle : { backgroundColor: 'transparent' }}
+              onClick={selectDecorativeBushes}
+            >
+              Декоративні
+            </ButtonSelect>
+          </ButtonWrapper>
+          <Section>
+            {roses && allData.roses
+              ? allData.roses.map((i) => {
+                  return <CardItem key={i.id} tData={i} />;
+                })
+              : null}
+            {berries && allData.berries
+              ? allData.berries.map((i) => {
+                  return <CardItem key={i.id} tData={i} />;
+                })
+              : null}
+            {fruitful && allData.fruitful
+              ? allData.fruitful.map((i) => {
+                  return <CardItem key={i.id} tData={i} />;
+                })
+              : null}
+            {decorativeBushes && allData.decorative
+              ? allData.decorative.map((i) => {
+                  return <CardItem key={i.id} tData={i} />;
+                })
+              : null}
+          </Section>
+        </NoFiltered>
+      ) : (
+        filteredItems.map((item) => <CardItem key={item.id} tData={item} />)
+      )}
     </Container>
   );
 };

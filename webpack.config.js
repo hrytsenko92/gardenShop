@@ -65,7 +65,6 @@ module.exports = {
       template: path.join(__dirname, 'src', 'index.html'),
     }),
     new CleanWebpackPlugin(),
-    new Dotenv(),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
     }),
