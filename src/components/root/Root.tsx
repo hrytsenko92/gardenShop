@@ -125,7 +125,7 @@ const Link = styled(NavLink)`
     font-weight: 700;
   }
   @media ${device.mobileM} {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     width: 120px;
     height: 35px;

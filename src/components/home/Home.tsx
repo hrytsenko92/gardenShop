@@ -96,7 +96,7 @@ const Home: React.FC = () => {
     setSearchText(e.target.value);
     const searchRegex = new RegExp(e.target.value, 'i');
     const items = Object.values(allData).flat();
-    const filteredItems = items.filter((item) => searchRegex.test(item.name));
+    const filteredItems = items.filter((item) => searchRegex.test(item.name.concat(item.cls)));
     setFilteredItems(filteredItems);
   };
 
@@ -196,7 +196,11 @@ const Home: React.FC = () => {
           </Section>
         </NoFiltered>
       ) : (
-        filteredItems.map((item) => <CardItem key={item.id} tData={item} />)
+        <Section>
+          {filteredItems.map((item) => (
+            <CardItem key={item.id} tData={item} />
+          ))}
+        </Section>
       )}
     </Container>
   );

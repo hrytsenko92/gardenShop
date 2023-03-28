@@ -17,8 +17,16 @@ export const orderSlice = createSlice({
   name: 'orderList',
   initialState,
   reducers: {
+    // add: (state, action: PayloadAction<itemType>) => {
+    //   state.value.push(action.payload);
+    // },
     add: (state, action: PayloadAction<itemType>) => {
-      state.value.push(action.payload);
+      const existingItem = state.value.find((item) => item.itemId === action.payload.itemId);
+      if (existingItem) {
+        existingItem.itemTotal += action.payload.itemTotal;
+      } else {
+        state.value.push(action.payload);
+      }
     },
     remove: (state, action: PayloadAction<itemType>) => {
       state.value = state.value.filter((item) => item.itemId !== action.payload.itemId);

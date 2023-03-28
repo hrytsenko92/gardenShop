@@ -20,11 +20,12 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Crimson Pro', serif;
 }
 body {
   max-width: 1440px;
   margin: 0 auto;
-  font-family: 'Lato', sans-serif;
+  
 }
 `;
 const router = createBrowserRouter(

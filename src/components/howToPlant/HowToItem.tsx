@@ -22,12 +22,14 @@ const TitleWrapper = styled.div`
   width: 100%;
 `;
 const Title = styled.h4`
+  width: 90%;
+  margin: 50px 0px;
   font-size: 2rem;
   text-align: center;
   color: ${colorsPalette.color1};
 `;
 const Image = styled.div`
-  width: 90%;
+  width: 75%;
   height: auto;
   aspect-ratio: 2/1;
   border-radius: 7px;
