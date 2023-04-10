@@ -14,6 +14,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 25px 0px;
+
 `;
 const EmptyCard = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const EmptyCard = styled.div`
   justify-content: center;
   align-items: center;
   padding: 25px;
+  
 `;
 const EmptyCardText = styled.h3``;
 

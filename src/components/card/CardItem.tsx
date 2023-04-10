@@ -251,7 +251,7 @@ const Wrapper = styled.div`
       height: 100%;
       transform: scale(0.5);
       transform: translateY(-200%);
-      transition: opacity 0.2s, transform 0.8s;
+      transition: opacity 0.2s, transform 0.7s;
       ${ItemDetail} {
         height: 100%;
         display: grid;
@@ -259,6 +259,7 @@ const Wrapper = styled.div`
         grid-template-rows: 20px 35px auto;
         gap: 5px;
         color: ${colorsPalette.color1};
+        overflow: hidden;
         ${ItemDetailHeight} {
           grid-column: 1/2;
           grid-row: 1/2;
@@ -275,7 +276,7 @@ const Wrapper = styled.div`
           grid-column: 1/2;
           grid-row: 3/4;
           font-size: 14px;
-          overflow: scroll;
+          overflow: hidden;
         }
       }
     }
