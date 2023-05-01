@@ -76,7 +76,7 @@ const Contacts: React.FC = () => {
           <ContactName>Елла Андронік</ContactName>
           <ContactAdress>Чернівецька область, Дністровський район, село Вашківці </ContactAdress>
           <PhoneAndEmail>
-            <ContactPhone href="tel:0986030808">+38-098-603-08-08 (Viber, Telegram)</ContactPhone>
+            <ContactPhone href="tel:0986030880">+38-098-603-08-80 (Viber, Telegram)</ContactPhone>
             <ContactEmail href="mailto:ella0986030880@gmail.com">
               ella0986030880@gmail.com
             </ContactEmail>
